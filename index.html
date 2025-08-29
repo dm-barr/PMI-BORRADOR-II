@@ -16,6 +16,8 @@
   <meta property="og:locale" content="es_PE" />
   <link rel="icon" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- JSON-LD: EVENT -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,28 +36,50 @@
     "organizer": { "@type": "Organization", "name": "PM Tour Norte", "url": "https://tudominio.com" }
   }
   </script>
+
+  <!-- JSON-LD: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"¿Cómo obtengo mis PDUs?","acceptedAnswer":{"@type":"Answer","text":"Se emiten contra asistencia. Tras el evento recibirás instrucciones para reportarlas."}},
+      {"@type":"Question","name":"¿Puedo transferir mi entrada?","acceptedAnswer":{"@type":"Answer","text":"Sí, hasta 72 horas antes del evento. Escríbenos por el formulario de registro."}},
+      {"@type":"Question","name":"¿Habrá streaming del día presencial?","acceptedAnswer":{"@type":"Answer","text":"Se grabarán charlas seleccionadas; el networking es presencial."}}
+    ]
+  }
+  </script>
+
+  <!-- (Opcional) Analytics: pega tu GA4 / Meta aquí -->
+  <!-- <script>/* gtag('config','G-XXXX'); */</script> -->
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <!-- Top announcement -->
+  <div class="announce" role="note">
+    <div class="container announce__bar">
+      <span>Descuento Early Bird hasta 15 oct · Cupos limitados</span>
+      <a class="btn btn-pill btn-xs" href="#precios">Aprovechar</a>
+    </div>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
 
   <!-- NAV -->
   <header class="header" role="banner">
     <nav class="nav container" aria-label="Principal">
       <a class="brand" href="#inicio" aria-label="Inicio">PM Tour Norte 2025</a>
-
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="menu" id="menu" role="menubar">
         <li role="none"><a role="menuitem" href="#resumen">Resumen</a></li>
         <li role="none"><a role="menuitem" href="#agenda">Agenda</a></li>
         <li role="none"><a role="menuitem" href="#speakers">Ponentes</a></li>
-        <li role="none"><a role="menuitem" href="#precios">Precios</a></li>
+        <li role="none"><a role="menuitem" href="#precios">Entradas</a></li>
         <li role="none"><a role="menuitem" href="#sede">Sede</a></li>
         <li role="none"><a role="menuitem" href="#faq">FAQ</a></li>
       </ul>
-
       <a class="btn btn-pill" href="#registro">Inscríbete</a>
     </nav>
   </header>
@@ -67,7 +91,15 @@
         <p class="eyebrow">PM TOUR NORTE TRUJILLO 2025</p>
         <h1 id="titulo-hero">VI CONGRESO INTERNACIONAL</h1>
         <h2>Dirección de Proyectos</h2>
-        <p class="date">📅 7 y 8 de noviembre de 2025 · Modalidad virtual & presencial</p>
+        <p class="date">📅 7 y 8 de noviembre de 2025 · Virtual & Presencial</p>
+
+        <div class="countdown" aria-label="Cuenta regresiva al inicio">
+          <div><span id="d">00</span><small>Días</small></div>
+          <div><span id="h">00</span><small>Horas</small></div>
+          <div><span id="m">00</span><small>Min</small></div>
+          <div><span id="s">00</span><small>Seg</small></div>
+        </div>
+
         <div class="hero__cta">
           <a class="btn btn-lg" href="#precios">Ver Entradas</a>
           <a class="btn btn-ghost btn-lg" href="#agenda">Ver Agenda</a>
@@ -85,27 +117,15 @@
   </section>
 
   <main id="contenido">
-    <!-- RESUMEN / VALUE PROP -->
+    <!-- RESUMEN -->
     <section id="resumen" class="section">
       <div class="container">
         <h3 class="section__title">¿Por qué asistir?</h3>
         <div class="why">
-          <div class="why__item">
-            <div class="why__icon">🏛️</div><h5>Rigor & actualidad</h5>
-            <p class="muted small">Tendencias en PMO, agilidad, IA aplicada y liderazgo.</p>
-          </div>
-          <div class="why__item">
-            <div class="why__icon">🤝</div><h5>Networking</h5>
-            <p class="muted small">Conecta con líderes y organizaciones clave de la región.</p>
-          </div>
-          <div class="why__item">
-            <div class="why__icon">🎓</div><h5>PDUs</h5>
-            <p class="muted small">Horas válidas para el mantenimiento de tus certificaciones.</p>
-          </div>
-          <div class="why__item">
-            <div class="why__icon">🧭</div><h5>Casos reales</h5>
-            <p class="muted small">Lecciones aprendidas y marcos aplicados en LATAM.</p>
-          </div>
+          <div class="why__item"><div class="why__icon">🏛️</div><h5>Rigor & actualidad</h5><p class="muted small">PMO, agilidad, IA aplicada y liderazgo.</p></div>
+          <div class="why__item"><div class="why__icon">🤝</div><h5>Networking</h5><p class="muted small">Conecta con líderes y organizaciones clave.</p></div>
+          <div class="why__item"><div class="why__icon">🎓</div><h5>PDUs</h5><p class="muted small">Horas válidas para tus certificaciones.</p></div>
+          <div class="why__item"><div class="why__icon">🧭</div><h5>Casos reales</h5><p class="muted small">Lecciones aplicadas en LATAM.</p></div>
         </div>
 
         <div class="stats" aria-label="Indicadores">
@@ -122,133 +142,164 @@
       <div class="container">
         <h3 id="agenda-titulo" class="section__title">Agenda</h3>
 
+        <div class="filters">
+          <input id="agendaSearch" type="search" placeholder="Buscar por palabra clave…" aria-label="Buscar en agenda">
+          <select id="agendaType" aria-label="Filtrar por tipo">
+            <option value="">Todos</option>
+            <option value="Keynote">Keynote</option>
+            <option value="Panel">Panel</option>
+            <option value="Taller">Taller</option>
+          </select>
+          <a class="btn btn-pill btn-xs" id="btnIcs" href="#" download="pm-tour-norte.ics">Descargar .ics</a>
+        </div>
+
         <div class="tabs" role="tablist" aria-label="Cambiar día">
           <button class="tab active" role="tab" aria-selected="true" aria-controls="dia1" id="t-dia1">Día 1 · Virtual (7 nov)</button>
           <button class="tab" role="tab" aria-selected="false" aria-controls="dia2" id="t-dia2">Día 2 · Presencial (8 nov)</button>
         </div>
 
         <div id="dia1" role="tabpanel" aria-labelledby="t-dia1" class="tabpanes active">
-          <ul class="agenda">
-            <li><time>09:00</time> Apertura & bienvenida</li>
-            <li><time>09:30</time> Keynote: IA y PM – de la promesa al valor</li>
-            <li><time>11:00</time> Panel: PMO ágiles en entornos regulados</li>
-            <li><time>14:30</time> Taller: OKRs & Portafolios</li>
-            <li><time>16:00</time> Casos: Transformación digital en obra pública</li>
+          <ul class="agenda" id="listDia1">
+            <li data-type="Keynote"><time>09:30</time> Keynote: IA y PM – de la promesa al valor</li>
+            <li data-type="Panel"><time>11:00</time> Panel: PMO ágiles en entornos regulados</li>
+            <li data-type="Taller"><time>14:30</time> Taller: OKRs & Portafolios</li>
+            <li data-type="Caso"><time>16:00</time> Casos: Transformación digital en obra pública</li>
           </ul>
         </div>
 
         <div id="dia2" role="tabpanel" aria-labelledby="t-dia2" class="tabpanes">
-          <ul class="agenda">
-            <li><time>09:00</time> Acreditación & networking</li>
-            <li><time>10:00</time> Keynote: Liderazgo adaptativo</li>
-            <li><time>12:00</time> Conversatorio: Riesgos y compliance</li>
-            <li><time>15:00</time> Taller: Customer-centric delivery</li>
-            <li><time>17:30</time> Clausura & entrega de certificados</li>
+          <ul class="agenda" id="listDia2">
+            <li data-type="Acreditación"><time>09:00</time> Acreditación & networking</li>
+            <li data-type="Keynote"><time>10:00</time> Keynote: Liderazgo adaptativo</li>
+            <li data-type="Panel"><time>12:00</time> Conversatorio: Riesgos y compliance</li>
+            <li data-type="Taller"><time>15:00</time> Taller: Customer-centric delivery</li>
+            <li data-type="Clausura"><time>17:30</time> Clausura & entrega de certificados</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- PONENTES -->
+    <!-- SPEAKERS (con modal) -->
     <section id="speakers" class="section">
       <div class="container">
         <h3 class="section__title">Ponentes</h3>
         <div class="speakers">
           <article class="speaker">
-            <div class="avatar" aria-hidden="true">👩‍💼</div>
-            <h6>Ing. María González</h6>
-            <p class="muted small">PMO Lead · Sector financiero</p>
-            <p class="chips">PMP, PMI-ACP, SAFe</p>
+            <button class="speaker__btn" data-bio="Experta en PMO y transformación. 15+ años en banca." data-name="Ing. María González" data-tags="PMP, PMI-ACP, SAFe" aria-haspopup="dialog">
+              <div class="avatar" aria-hidden="true">👩‍💼</div>
+              <h6>Ing. María González</h6>
+              <p class="muted small">PMO Lead · Sector financiero</p>
+              <p class="chips">PMP, PMI-ACP, SAFe</p>
+            </button>
           </article>
+
           <article class="speaker">
-            <div class="avatar" aria-hidden="true">👨‍💼</div>
-            <h6>Dr. Carlos Mendoza</h6>
-            <p class="muted small">Director de Programas · Multilatina</p>
-            <p class="chips">PgMP, PMP</p>
+            <button class="speaker__btn" data-bio="Director de programas regionales. Portafolios multimillonarios." data-name="Dr. Carlos Mendoza" data-tags="PgMP, PMP" aria-haspopup="dialog">
+              <div class="avatar" aria-hidden="true">👨‍💼</div>
+              <h6>Dr. Carlos Mendoza</h6>
+              <p class="muted small">Director de Programas · Multilatina</p>
+              <p class="chips">PgMP, PMP</p>
+            </button>
           </article>
+
           <article class="speaker">
-            <div class="avatar" aria-hidden="true">👨‍🏫</div>
-            <h6>PhD. Roberto Silva</h6>
-            <p class="muted small">Consultor en Transformación Digital</p>
-            <p class="chips">PMP, PRINCE2</p>
+            <button class="speaker__btn" data-bio="Investigador y consultor en IA aplicada a operaciones." data-name="PhD. Roberto Silva" data-tags="PMP, PRINCE2" aria-haspopup="dialog">
+              <div class="avatar" aria-hidden="true">👨‍🏫</div>
+              <h6>PhD. Roberto Silva</h6>
+              <p class="muted small">Consultor en Transformación Digital</p>
+              <p class="chips">PMP, PRINCE2</p>
+            </button>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- PRECIOS -->
+    <!-- ENTRADAS (toggle moneda + cupón) -->
     <section id="precios" class="section section-sky">
       <div class="container">
         <h3 class="section__title">Entradas</h3>
 
+        <div class="pricebar">
+          <div class="toggle">
+            <span>Moneda:</span>
+            <button class="chip active" data-currency="PEN">PEN (S/)</button>
+            <button class="chip" data-currency="USD">USD ($)</button>
+          </div>
+          <div class="coupon">
+            <input id="coupon" type="text" placeholder="Código de descuento">
+            <button class="btn btn-pill btn-xs" id="applyCoupon">Aplicar</button>
+            <small id="couponMsg" class="muted tiny"></small>
+          </div>
+        </div>
+
         <div class="cards three">
-          <article class="card price">
+          <article class="card price" data-pen="115" data-usd="32">
             <h6>Estudiantes (Virtual)</h6>
-            <p class="price__value">S/ 115</p>
-            <ul class="checklist">
-              <li>Acceso streaming</li><li>Materiales</li><li>Certificado digital</li>
-            </ul>
+            <p class="price__value"><span class="money">S/ 115</span></p>
+            <ul class="checklist"><li>Acceso streaming</li><li>Materiales</li><li>Certificado digital</li></ul>
             <a class="btn block" href="#registro">Comprar</a>
           </article>
 
-          <article class="card price featured">
+          <article class="card price featured" data-pen="155" data-usd="43">
             <div class="ribbon">Recomendado</div>
             <h6>Miembros PMI (Híbrido)</h6>
-            <p class="price__value">S/ 155</p>
-            <ul class="checklist">
-              <li>Zona preferente</li><li>Coffee break</li><li>Certificado físico</li>
-            </ul>
+            <p class="price__value"><span class="money">S/ 155</span></p>
+            <ul class="checklist"><li>Zona preferente</li><li>Coffee break</li><li>Certificado físico</li></ul>
             <a class="btn block" href="#registro">Comprar</a>
           </article>
 
-          <article class="card price">
+          <article class="card price" data-pen="205" data-usd="57">
             <h6>General (Híbrido)</h6>
-            <p class="price__value">S/ 205</p>
-            <ul class="checklist">
-              <li>Acceso completo</li><li>Networking</li><li>Soporte en sitio</li>
-            </ul>
+            <p class="price__value"><span class="money">S/ 205</span></p>
+            <ul class="checklist"><li>Acceso completo</li><li>Networking</li><li>Soporte en sitio</li></ul>
             <a class="btn block" href="#registro">Comprar</a>
           </article>
         </div>
+        <p class="muted tiny mt-8">* Valores en USD son referenciales (no en tiempo real).</p>
       </div>
     </section>
 
-    <!-- TESTIMONIOS -->
+    <!-- TESTIMONIOS Slider -->
     <section class="section" aria-labelledby="testimonios-titulo">
       <div class="container">
         <h3 id="testimonios-titulo" class="section__title">Lo que dicen ediciones anteriores</h3>
-        <div class="cards three">
-          <blockquote class="card">
-            <p>“Contenido de altísimo nivel y contactos valiosos para mi PMO.”</p>
-            <cite class="muted tiny">— J. Rojas, Telco</cite>
-          </blockquote>
-          <blockquote class="card">
-            <p>“Me llevé frameworks prácticos. Excelente organización.”</p>
-            <cite class="muted tiny">— M. Hidalgo, Banca</cite>
-          </blockquote>
-          <blockquote class="card">
-            <p>“Keynotes inspiradoras y talleres aplicables al día a día.”</p>
-            <cite class="muted tiny">— L. Torres, Energía</cite>
-          </blockquote>
+        <div class="slider" id="slider">
+          <button class="slider__nav prev" aria-label="Anterior">‹</button>
+          <div class="slider__viewport">
+            <div class="slide"><blockquote>“Contenido de altísimo nivel y contactos valiosos para mi PMO.”<cite>— J. Rojas, Telco</cite></blockquote></div>
+            <div class="slide"><blockquote>“Me llevé frameworks prácticos. Excelente organización.”<cite>— M. Hidalgo, Banca</cite></blockquote></div>
+            <div class="slide"><blockquote>“Keynotes inspiradoras y talleres aplicables al día a día.”<cite>— L. Torres, Energía</cite></blockquote></div>
+          </div>
+          <button class="slider__nav next" aria-label="Siguiente">›</button>
         </div>
       </div>
     </section>
 
-    <!-- PATROCINADORES -->
+    <!-- PATROCINADORES (niveles) -->
     <section class="section section-sponsors" aria-labelledby="sponsors-titulo">
       <div class="container">
         <h3 id="sponsors-titulo" class="section__title">Patrocinadores</h3>
-        <div class="sponsors">
-          <div class="sponsor">PMI</div>
-          <div class="sponsor">TECH CORP</div>
-          <div class="sponsor">INNOVATE</div>
-          <div class="sponsor">FUTURE</div>
+
+        <h5 class="subtitle">Gold</h5>
+        <div class="sponsors tier-gold">
+          <div class="sponsor">PMI</div><div class="sponsor">TECH CORP</div>
         </div>
+
+        <h5 class="subtitle">Silver</h5>
+        <div class="sponsors tier-silver">
+          <div class="sponsor">INNOVATE</div><div class="sponsor">FUTURE</div><div class="sponsor">ALPHA</div>
+        </div>
+
+        <h5 class="subtitle">Bronze</h5>
+        <div class="sponsors tier-bronze">
+          <div class="sponsor">BETA</div><div class="sponsor">OMEGA</div><div class="sponsor">DELTA</div><div class="sponsor">SIGMA</div>
+        </div>
+
         <p class="muted small mt-8">¿Deseas patrocinar? <a class="underline" href="#registro">Contáctanos</a>.</p>
       </div>
     </section>
 
-    <!-- SEDE / MAPA -->
+    <!-- SEDE / MAPA + tips -->
     <section id="sede" class="section" aria-labelledby="sede-titulo">
       <div class="container">
         <h3 id="sede-titulo" class="section__title">Sede</h3>
@@ -261,10 +312,17 @@
               <li>Oferta hotelera cercana</li>
               <li>Clima agradable en noviembre</li>
             </ul>
+            <div class="tips">
+              <h6>Hoteles sugeridos</h6>
+              <ul class="muted small">
+                <li>Hotel Libertad (5min)</li>
+                <li>Gran Trujillo (7min)</li>
+                <li>Plaza Centro (8min)</li>
+              </ul>
+            </div>
           </article>
           <article class="card">
             <div class="mapwrap">
-              <!-- Reemplaza src por tu mapa embebido de Google Maps -->
               <iframe title="Mapa de la sede" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                 src="https://maps.google.com/maps?q=Trujillo%20Peru&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
             </div>
@@ -278,19 +336,24 @@
       <div class="container">
         <h3 id="faq-titulo" class="section__title">Preguntas frecuentes</h3>
         <div class="accordion" id="faq-acc">
-          <details>
-            <summary>¿Cómo obtengo mis PDUs?</summary>
-            <p>Se emiten contra asistencia. Tras el evento recibirás instrucciones y códigos para reportarlas.</p>
-          </details>
-          <details>
-            <summary>¿Puedo transferir mi entrada?</summary>
-            <p>Sí, hasta 72 horas antes del evento. Escríbenos por el formulario.</p>
-          </details>
-          <details>
-            <summary>¿Habrá streaming del día presencial?</summary>
-            <p>Se hará grabación de charlas seleccionadas; el networking es solo presencial.</p>
-          </details>
+          <details><summary>¿Cómo obtengo mis PDUs?</summary><p>Se emiten contra asistencia. Tras el evento recibirás instrucciones.</p></details>
+          <details><summary>¿Puedo transferir mi entrada?</summary><p>Sí, hasta 72 horas antes del evento. Escríbenos por el formulario.</p></details>
+          <details><summary>¿Habrá streaming del día presencial?</summary><p>Se grabarán charlas seleccionadas; el networking es presencial.</p></details>
+          <details><summary>¿Emiten factura?</summary><p>Sí, indica tus datos en comentarios del registro.</p></details>
         </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section" aria-labelledby="newsletter">
+      <div class="container">
+        <h3 id="newsletter" class="section__title">Mantente informado</h3>
+        <form class="newsletter card" id="form-news" novalidate>
+          <input type="email" name="newsEmail" placeholder="Tu correo" required />
+          <button class="btn btn-pill" type="submit">Suscribirme</button>
+          <p class="muted tiny" id="newsMsg"></p>
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        </form>
       </div>
     </section>
 
@@ -300,36 +363,21 @@
         <h3 id="registro-titulo" class="section__title">Registro</h3>
         <form class="form card" id="form-registro" novalidate>
           <div class="form__grid">
-            <label>Nombre y apellido
-              <input type="text" name="nombre" required placeholder="Tu nombre completo" />
-            </label>
-            <label>Correo
-              <input type="email" name="email" required placeholder="tucorreo@dominio.com" />
-            </label>
-            <label>Teléfono
-              <input type="tel" name="telefono" placeholder="+51 9xx xxx xxx" />
-            </label>
-            <label>Tipo de entrada
-              <select name="plan" required>
-                <option value="">Selecciona…</option>
-                <option>Estudiantes (Virtual) – S/ 115</option>
-                <option>Miembros PMI (Híbrido) – S/ 155</option>
-                <option>General (Híbrido) – S/ 205</option>
-              </select>
-            </label>
-            <label>Comentarios
-              <textarea name="comentarios" rows="3" placeholder="¿Requieres factura, grupo, etc.?"></textarea>
-            </label>
+            <label>Nombre y apellido<input type="text" name="nombre" required placeholder="Tu nombre completo" /></label>
+            <label>Correo<input type="email" name="email" required placeholder="tucorreo@dominio.com" /></label>
+            <label>Teléfono<input type="tel" name="telefono" placeholder="+51 9xx xxx xxx" /></label>
+            <label>Tipo de entrada<select name="plan" required>
+              <option value="">Selecciona…</option>
+              <option>Estudiantes (Virtual) – S/ 115</option>
+              <option>Miembros PMI (Híbrido) – S/ 155</option>
+              <option>General (Híbrido) – S/ 205</option>
+            </select></label>
+            <label>Comentarios<textarea name="comentarios" rows="3" placeholder="¿Requieres factura, grupo, etc.?"></textarea></label>
           </div>
-          <label class="check-terms">
-            <input type="checkbox" name="tyc" required />
-            <span>Acepto los <a class="underline" href="#legal">Términos y Políticas</a></span>
-          </label>
-          <div class="form__actions">
-            <button type="submit" class="btn btn-lg">Enviar registro</button>
-            <p class="muted tiny">Recibirás confirmación al correo.</p>
-          </div>
+          <label class="check-terms"><input type="checkbox" name="tyc" required /><span>Acepto los <a class="underline" href="#legal">Términos y Políticas</a></span></label>
+          <div class="form__actions"><button type="submit" class="btn btn-lg">Enviar registro</button><p class="muted tiny">Recibirás confirmación al correo.</p></div>
           <p class="form__msg" id="form-msg" role="status" aria-live="polite"></p>
+          <input type="text" name="empresa" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
         </form>
       </div>
     </section>
@@ -371,7 +419,27 @@
     </div>
   </aside>
 
+  <!-- Back to top -->
   <button class="backtop" id="backtop" aria-label="Volver arriba">↑</button>
+
+  <!-- Modal SPEAKER / Modal FORM -->
+  <dialog id="modal" class="modal" aria-modal="true">
+    <div class="modal__card">
+      <button class="modal__close" id="modalClose" aria-label="Cerrar">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </dialog>
+
+  <!-- Cookies -->
+  <div class="cookies" id="cookies" role="dialog" aria-live="polite" aria-label="Preferencias de cookies">
+    <div class="cookies__box">
+      <p>Usamos cookies para mejorar tu experiencia. <a class="underline" href="#legal">Saber más</a>.</p>
+      <div class="cookies__actions">
+        <button class="btn btn-pill btn-xs" id="cookiesAccept">Aceptar</button>
+        <button class="btn btn-ghost btn-pill btn-xs" id="cookiesDecline">Rechazar</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
