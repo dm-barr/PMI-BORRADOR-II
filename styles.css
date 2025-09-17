@@ -229,6 +229,17 @@
 
 
   /* ===== Hero con triángulos bien definidos ===== */
+  #inicio.hero {
+    background-image: url('img/fondos/portadaTrujillo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    color: white;
+  }
+
+
   .hero {
     position: relative;
     color: #fff;
@@ -300,13 +311,17 @@
   }
 
   .qr img {
-  width: 150px;   /* Ajusta el tamaño */
-  height: auto;   /* Mantiene proporción */
-  display: block;
-  margin: 0 auto;
-  border-radius: 0.5rem;   /* Opcional: bordes redondeados */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* Opcional: sombra */
-}
+    width: 150px;
+    /* Ajusta el tamaño */
+    height: auto;
+    /* Mantiene proporción */
+    display: block;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    /* Opcional: bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    /* Opcional: sombra */
+  }
 
   .qr-box p {
     margin: 10px 0 0;
@@ -689,24 +704,28 @@
     display: block
   }
 
-  .avatar {
-    width: 96px;
-    height: 96px;
-    border-radius: 999px;
-    background: radial-gradient(circle, #AEEBFF, #79E0FF);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 44px;
-    margin: 0 auto 10px;
-    color: #0C0A1A
+  /* Avatares de ponentes - rectángulo 3:2 con esquinas redondeadas y borde difuminado */
+  .speakers .avatar {
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 2 / 2.4;
+    display: block;
+    margin: 0 auto 1rem;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15),
+      0 0 30px rgba(0, 0, 0, 0.05) inset;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .chips {
-    margin-top: 4px;
-    color: #CFCBF5;
-    font-weight: 600
+  /* Hover elegante */
+  .speakers .avatar:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2),
+      0 0 40px rgba(0, 0, 0, 0.08) inset;
   }
+
 
 
   /* Precios */
