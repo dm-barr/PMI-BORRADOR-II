@@ -74,12 +74,14 @@
   <!-- NAV -->
   <header class="header" role="banner">
     <nav class="nav container" aria-label="Principal">
-      <a class="brand" href="#inicio" aria-label="Inicio">PM Tour Norte 2025</a>
+      <a class="brand" href="#inicio" aria-label="Inicio">
+        <img src="img/logo/logoSinFondoDef.png" alt="PM Tour Norte 2025" class="logo">
+      </a>
+
       <button class="hamburger" id="hamburger" aria-label="Abrir menú"
         aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="menu" id="menu" role="menubar">
         <li role="none"><a role="menuitem" href="#resumen">Resumen</a></li>
-        <li role="none"><a role="menuitem" href="#agenda">Agenda</a></li>
         <li role="none"><a role="menuitem" href="#speakers">Ponentes</a></li>
         <li role="none"><a role="menuitem" href="#precios">Entradas</a></li>
         <li role="none"><a role="menuitem" href="#sede">Sede</a></li>
@@ -107,17 +109,20 @@
 
         <div class="hero__cta">
           <a class="btn btn-lg" href="#precios">Ver Entradas</a>
-          <a class="btn btn-ghost btn-lg" href="#agenda">Ver Agenda</a>
+          <a class="btn btn-ghost btn-lg" href="#agenda">Conoce a los ponentes</a>
           <p class="sub">Cupos limitados • Emite PDUs</p>
         </div>
       </div>
 
       <div class="hero__qr" aria-hidden="true">
         <div class="qr-box">
-          <div class="qr"></div>
+          <div class="qr">
+            <img src="img/qr/qrPrincipal.png" alt="Código QR para inscribirse">
+          </div>
           <p>Escanea para inscribirte</p>
         </div>
       </div>
+
     </div>
     <div class="shards"></div>
     <div class="decor decor--1"></div>
@@ -350,7 +355,7 @@
         <div class="sponsor">PMI</div>
 
 
-       <!-- <h5 class="subtitle">Gold</h5>
+        <!-- <h5 class="subtitle">Gold</h5>
         <div class="sponsors tier-gold">
           <div class="sponsor">PMI</div>
           <div class="sponsor">TECH CORP</div>
@@ -382,7 +387,7 @@
         <div class="cards two">
           <article class="card soft">
             <h4>Trujillo – La Ciudad de la eterna primavera</h4>
-          <!--<ul class="checklist">
+            <!--<ul class="checklist">
               <li>Centro de Convenciones · ubicación céntrica</li>
               <li>Acceso aéreo y terrestre</li>
               <li>Oferta hotelera cercana</li>
@@ -430,7 +435,7 @@
           </details>
         </div>
       </div>
-    </section> 
+    </section>
 
     <!-- NEWSLETTER
     <section class="section" aria-labelledby="newsletter">
@@ -476,65 +481,65 @@
     </section>
   </main> -->
 
-  <!-- FOOTER -->
-  <footer id="legal" class="footer" role="contentinfo">
-    <div class="container footer__grid">
-      <div>
-        <h6 class="mb-8">PM Tour Norte 2025</h6>
-        <p class="muted tiny">Evento internacional de dirección de proyectos – Trujillo, Perú.</p>
-        <p class="muted tiny">Organiza: PMI NORTE PERU CHAPTER.</p>
+    <!-- FOOTER -->
+    <footer id="legal" class="footer" role="contentinfo">
+      <div class="container footer__grid">
+        <div>
+          <h6 class="mb-8">PM Tour Norte 2025</h6>
+          <p class="muted tiny">Evento internacional de dirección de proyectos – Trujillo, Perú.</p>
+          <p class="muted tiny">Organiza: PMI NORTE PERU CHAPTER.</p>
+        </div>
+        <div>
+          <h6 class="mb-8">Contacto</h6>
+          <ul class="contact">
+            <li>📧 <a href="mailto:info@pmtournorte.com">info@pmtournorte.com</a></li>
+            <li>📱 <a href="tel:+51955769734">+51 955 769 734</a></li>
+            <li>🌐 <a href="#" target="_blank" rel="noopener">www.pmtournorte.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="mb-8">Legal</h6>
+          <ul class="contact">
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Política de cookies</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h6 class="mb-8">Contacto</h6>
-        <ul class="contact">
-          <li>📧 <a href="mailto:info@pmtournorte.com">info@pmtournorte.com</a></li>
-          <li>📱 <a href="tel:+51955769734">+51 955 769 734</a></li>
-          <li>🌐 <a href="#" target="_blank" rel="noopener">www.pmtournorte.com</a></li>
-        </ul>
+      <p class="muted tiny center mt-24">© 2025 PM Tour Norte. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- CTA FLOTANTE -->
+    <aside class="cta-sticky" aria-hidden="false">
+      <div class="container cta-sticky__bar">
+        <span>PM Tour Norte 2025 · 7–8 nov</span>
+        <a class="btn btn-pill" href="https://wa.me/51955769734">Compra tu entrada</a>
       </div>
-      <div>
-        <h6 class="mb-8">Legal</h6>
-        <ul class="contact">
-          <li><a href="#">Política de privacidad</a></li>
-          <li><a href="#">Términos y condiciones</a></li>
-          <li><a href="#">Política de cookies</a></li>
-        </ul>
+    </aside>
+
+    <!-- Back to top -->
+    <button class="backtop" id="backtop" aria-label="Volver arriba">↑</button>
+
+    <!-- Modal SPEAKER / Modal FORM -->
+    <dialog id="modal" class="modal" aria-modal="true">
+      <div class="modal__card">
+        <button class="modal__close" id="modalClose" aria-label="Cerrar">×</button>
+        <div id="modalBody"></div>
+      </div>
+    </dialog>
+
+    <!-- Cookies -->
+    <div class="cookies" id="cookies" role="dialog" aria-live="polite" aria-label="Preferencias de cookies">
+      <div class="cookies__box">
+        <p>Usamos cookies para mejorar tu experiencia. <a class="underline" href="#legal">Saber más</a>.</p>
+        <div class="cookies__actions">
+          <button class="btn btn-pill btn-xs" id="cookiesAccept">Aceptar</button>
+          <button class="btn btn-ghost btn-pill btn-xs" id="cookiesDecline">Rechazar</button>
+        </div>
       </div>
     </div>
-    <p class="muted tiny center mt-24">© 2025 PM Tour Norte. Todos los derechos reservados.</p>
-  </footer>
 
-  <!-- CTA FLOTANTE -->
-  <aside class="cta-sticky" aria-hidden="false">
-    <div class="container cta-sticky__bar">
-      <span>PM Tour Norte 2025 · 7–8 nov</span>
-      <a class="btn btn-pill" href="https://wa.me/51955769734">Compra tu entrada</a>
-    </div>
-  </aside>
-
-  <!-- Back to top -->
-  <button class="backtop" id="backtop" aria-label="Volver arriba">↑</button>
-
-  <!-- Modal SPEAKER / Modal FORM -->
-  <dialog id="modal" class="modal" aria-modal="true">
-    <div class="modal__card">
-      <button class="modal__close" id="modalClose" aria-label="Cerrar">×</button>
-      <div id="modalBody"></div>
-    </div>
-  </dialog>
-
-  <!-- Cookies -->
-  <div class="cookies" id="cookies" role="dialog" aria-live="polite" aria-label="Preferencias de cookies">
-    <div class="cookies__box">
-      <p>Usamos cookies para mejorar tu experiencia. <a class="underline" href="#legal">Saber más</a>.</p>
-      <div class="cookies__actions">
-        <button class="btn btn-pill btn-xs" id="cookiesAccept">Aceptar</button>
-        <button class="btn btn-ghost btn-pill btn-xs" id="cookiesDecline">Rechazar</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
