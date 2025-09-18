@@ -207,7 +207,6 @@
     height: 8rem;
     width: auto;
     display: block;
-    filter: drop-shadow(2px 2px 4px rgba(255, 255, 255, 0.8));
     transition: transform 0.3s ease;
   }
 
@@ -848,6 +847,12 @@
     margin: 14px 0 6px
   }
 
+  .cards h6 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 18px;
+  }
+
   /* FAQ / Newsletter / Form */
   .accordion details {
     background: rgba(174, 235, 255, .06);
@@ -1290,3 +1295,62 @@
       grid-template-columns: 70px 1fr
     }
   }
+  
+
+
+  /* Grid general */
+.ejes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+/* Tarjetas */
+.eje-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Hover elegante */
+.eje-card:hover {
+  transform: translateY(-6px);
+  border-color: #2575fc;
+  box-shadow: 0 8px 20px rgba(37,117,252,0.15);
+}
+
+/* Íconos */
+.eje-icon {
+  font-size: 2.8rem;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: #f5f7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2575fc;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+/* Títulos */
+.eje-card h5 {
+  font-size: 1.2rem;
+  margin: 0.8rem 0;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Texto */
+.eje-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
