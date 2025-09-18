@@ -150,7 +150,7 @@ function updatePrices(curr){
   document.querySelectorAll('.price').forEach(card=>{
     const pen = Number(card.dataset.pen), usd = Number(card.dataset.usd);
     const el = card.querySelector('.money');
-    el.textContent = (curr==='USD') ? `$ ${usd}` : `S/ ${pen}`;
+    el.textContent = (curr==='USD') ? `S/ ${usd}` : `S/ ${pen}`;
   });
 }
 currencyButtons.forEach(btn=>{
