@@ -126,23 +126,35 @@ $('#btnIcs')?.addEventListener('click', e => {
 });
 
 // ===== Modal Speakers
-const modal = $('#modal'), modalBody = $('#modalBody'), modalClose = $('#modalClose');
-document.querySelectorAll('.speaker__btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const name = btn.dataset.name, bio = btn.dataset.bio, tags = btn.dataset.tags;
+
+
+const modal = document.getElementById('modal'),
+      modalBody = document.getElementById('modalBody'),
+      modalClose = document.getElementById('modalClose');
+
+document.querySelectorAll('.speaker__btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const name = btn.dataset.name,
+          bio = btn.dataset.bio,
+          tags = btn.dataset.tags,
+          linkedin = btn.dataset.linkedin;
+
     modalBody.innerHTML = `
       <h3 style="margin-top:0">${name}</h3>
       <p class="muted small">${tags}</p>
       <p>${bio}</p>
       <div style="display:flex;gap:8px;margin-top:10px">
-        <a class="chip" href="#" aria-label="LinkedIn ${name}">LinkedIn</a>
-        <a class="chip" href="#" aria-label="X ${name}">X</a>
-      </div>`;
+        <a class="chip" href="${linkedin}" target="_blank" aria-label="LinkedIn ${name}">LinkedIn</a>
+      </div>
+    `;
+
     modal.showModal();
-  })
+  });
 });
-modalClose?.addEventListener('click', ()=> modal.close());
-modal?.addEventListener('click', e=>{ if(e.target===modal) modal.close(); });
+
+modalClose?.addEventListener('click', () => modal.close());
+modal?.addEventListener('click', e => { if (e.target === modal) modal.close(); });
+
 
 // ===== Toggle moneda + cupón
 const currencyButtons = document.querySelectorAll('.toggle .chip');
