@@ -559,7 +559,7 @@
     box-shadow: var(--shadow)
   }
 
-  .why__item h5{
+  .why__item h5 {
     font-size: 16px;
   }
 
@@ -670,80 +670,83 @@
   }
 
   /* ===== Contenedor de speakers ===== */
-#speakers {
-  position: relative;
-  overflow: hidden; /* evita que los triángulos se salgan */
-}
+  #speakers {
+    position: relative;
+    overflow: hidden;
+    /* evita que los triángulos se salgan */
+  }
 
-/* Contenedor de las tarjetas */
-#speakers .speakers {
-  position: relative;
-  z-index: 1; /* asegura que las tarjetas estén por encima de los triángulos */
-}
+  /* Contenedor de las tarjetas */
+  #speakers .speakers {
+    position: relative;
+    z-index: 1;
+    /* asegura que las tarjetas estén por encima de los triángulos */
+  }
 
-/* ===== Triángulos decorativos ===== */
-#speakers .decor-triangle {
-  position: absolute;
-  width: 50vw;
-  height: 50vh;
-  pointer-events: none; /* no interfieren con clicks */
-  opacity: 0.3;
-  background: linear-gradient(135deg, #5A1FAE 0%, #2B0E4E 100%);
-  clip-path: polygon(18% 0%, 100% 0%, 100% 80%, 60% 62%);
-  z-index: 0; /* siempre detrás */
-  filter: blur(80px);
-}
+  /* ===== Triángulos decorativos ===== */
+  #speakers .decor-triangle {
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    pointer-events: none;
+    /* no interfieren con clicks */
+    opacity: 0.3;
+    background: linear-gradient(135deg, #5A1FAE 0%, #2B0E4E 100%);
+    clip-path: polygon(18% 0%, 100% 0%, 100% 80%, 60% 62%);
+    z-index: 0;
+    /* siempre detrás */
+    filter: blur(80px);
+  }
 
-/* Triángulo inferior izquierdo */
-#speakers .triangle-1 {
-  bottom: -20%;
-  left: -15%;
-  transform: rotate(-10deg);
-  width: 55vw;
-  height: 55vh;
-  opacity: 0.25;
-}
+  /* Triángulo inferior izquierdo */
+  #speakers .triangle-1 {
+    bottom: -20%;
+    left: -15%;
+    transform: rotate(-10deg);
+    width: 55vw;
+    height: 55vh;
+    opacity: 0.25;
+  }
 
-/* Triángulo superior derecho */
-#speakers .triangle-2 {
-  top: -25%;
-  right: -10%;
-  transform: rotate(15deg);
-  width: 60vw;
-  height: 60vh;
-  opacity: 0.3;
-}
+  /* Triángulo superior derecho */
+  #speakers .triangle-2 {
+    top: -25%;
+    right: -10%;
+    transform: rotate(15deg);
+    width: 60vw;
+    height: 60vh;
+    opacity: 0.3;
+  }
 
-/* Triángulo central */
-#speakers .triangle-3 {
-  top: 15%;
-  left: 20%;
-  width: 45vw;
-  height: 45vh;
-  transform: rotate(5deg);
-  opacity: 0.2;
-}
+  /* Triángulo central */
+  #speakers .triangle-3 {
+    top: 15%;
+    left: 20%;
+    width: 45vw;
+    height: 45vh;
+    transform: rotate(5deg);
+    opacity: 0.2;
+  }
 
-/* Triángulo superior izquierdo */
-#speakers .triangle-4 {
-  top: -10%;
-  left: -20%;
-  width: 35vw;
-  height: 35vh;
-  transform: rotate(-25deg);
-  opacity: 0.2;
-}
+  /* Triángulo superior izquierdo */
+  #speakers .triangle-4 {
+    top: -10%;
+    left: -20%;
+    width: 35vw;
+    height: 35vh;
+    transform: rotate(-25deg);
+    opacity: 0.2;
+  }
 
-/* Triángulo inferior derecho */
-#speakers .triangle-5 {
-  bottom: -15%;
-  right: 10%;
-  width: 40vw;
-  height: 40vh;
-  transform: rotate(30deg);
-  opacity: 0.15;
-}
-
+  /* Triángulo inferior derecho */
+  #speakers .triangle-5 {
+    bottom: -15%;
+    right: 10%;
+    width: 40vw;
+    height: 40vh;
+    transform: rotate(30deg);
+    opacity: 0.15;
+  }
 
   /* Speakers */
   .speakers {
@@ -1037,10 +1040,29 @@
 
   .sponsors {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
     gap: 18px;
-    margin: 10px 0 16px
+    margin: 10px 0 16px;
+    justify-content: center;
+    justify-items: center;
   }
+
+.sponsor__name,
+.sponsor__tier {
+  text-align: center; /* centra el texto */
+  margin: 2px 0;      /* unifica el margen vertical */
+}
+
+.sponsor__name {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.sponsor__tier {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 
   .tier-gold .sponsor {
     border: 1px solid rgba(255, 215, 0, .35)
@@ -1376,78 +1398,75 @@
       grid-template-columns: 70px 1fr
     }
   }
-  
 
 
-/* ===== Sección Ejes igual que Why ===== */
-.ejes {
-  padding: 70px 0;
-  background: linear-gradient(180deg, #0C0A1A, #14102A);
-}
 
-.ejes h2 {
-  text-align: center;
-  font-size: 28px;
-  color: #E9E7FF;
-  margin-bottom: 26px;
-}
-
-.ejes-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.eje-icon {
-  font-size: 28px;
-}
-
-.eje-card {
-  background: linear-gradient(180deg, rgba(123, 44, 248, .12), rgba(12, 10, 26, .45));
-  border: 1px solid rgba(174, 235, 255, .12);
-  border-radius: 16px;
-  padding: 18px;
-  text-align: center;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-}
-
-.eje-card h3 {
-  font-size: 18px;
-  color: #E9E7FF;
-  margin-bottom: 6px;
-}
-
-.eje-card h5 {
-  font-size: 16px;
-}
-
-.eje-card p {
-  font-size: 1rem;
-  color: var(--muted);
-  line-height: 1.5;
-}
-
-.eje-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
-  border-color: var(--accent);
-}
-
-/* Responsive idéntico al Why */
-@media (max-width: 980px) {
-  .ejes-grid {
-    grid-template-columns: 1fr 1fr;
+  /* ===== Sección Ejes igual que Why ===== */
+  .ejes {
+    padding: 70px 0;
+    background: linear-gradient(180deg, #0C0A1A, #14102A);
   }
-}
 
-@media (max-width: 620px) {
-  .ejes-grid {
-    grid-template-columns: 1fr;
+  .ejes h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #E9E7FF;
+    margin-bottom: 26px;
   }
-}
 
+  .ejes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
+  .eje-icon {
+    font-size: 28px;
+  }
 
+  .eje-card {
+    background: linear-gradient(180deg, rgba(123, 44, 248, .12), rgba(12, 10, 26, .45));
+    border: 1px solid rgba(174, 235, 255, .12);
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  }
+
+  .eje-card h3 {
+    font-size: 18px;
+    color: #E9E7FF;
+    margin-bottom: 6px;
+  }
+
+  .eje-card h5 {
+    font-size: 16px;
+  }
+
+  .eje-card p {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .eje-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--accent);
+  }
+
+  /* Responsive idéntico al Why */
+  @media (max-width: 980px) {
+    .ejes-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .ejes-grid {
+      grid-template-columns: 1fr;
+    }
+  }
