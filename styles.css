@@ -402,6 +402,8 @@
     opacity: .9
   }
 
+  
+
   .hero .shards::after {
     content: "";
     position: absolute;
@@ -1385,6 +1387,21 @@
     .footer__grid {
       grid-template-columns: 1fr
     }
+
+      .hero .shards::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    filter: drop-shadow(0 10px 18px rgba(121, 224, 255, .28));
+    border-width: 0 140px 140px 0;
+    border-color: transparent #79E0FF transparent transparent;
+    right: 5vw;
+    top: 5vh;
+    transform: skewX(-6deg) rotate(4deg);
+    opacity: .9
+  }
 
     .qr {
       width: 130px;
