@@ -562,11 +562,17 @@
   }
 
   .why__item h5 {
-    font-size: 16px;
+    font-size: 20px;
+    margin: 0
   }
 
   .why__icon {
-    font-size: 28px
+    font-size: 60px
+  }
+
+  .why__item p {
+    font-size: 18px;
+    margin: 10px 0
   }
 
   .stats {
@@ -589,7 +595,8 @@
     display: block;
     font-size: 34px;
     font-weight: 800;
-    line-height: 1
+    line-height: 1;
+    display: inline;
   }
 
   /* Agenda */
@@ -1042,7 +1049,7 @@
 
   .sponsors {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
     margin: 10px 0 16px;
     justify-content: center;
@@ -1457,7 +1464,7 @@
   }
 
   .eje-icon {
-    font-size: 28px;
+    font-size: 60px;
   }
 
   .eje-card {
@@ -1477,13 +1484,15 @@
   }
 
   .eje-card h5 {
-    font-size: 16px;
+    font-size: 20px;
+    margin: 5px 0;
   }
 
   .eje-card p {
-    font-size: 1rem;
+    font-size: 18px;
     color: var(--muted);
     line-height: 1.5;
+
   }
 
   .eje-card:hover {
@@ -1504,3 +1513,5 @@
       grid-template-columns: 1fr;
     }
   }
+  
+  
