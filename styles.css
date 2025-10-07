@@ -1380,3 +1380,187 @@
       grid-template-columns: 1fr;
     }
   }
+
+
+
+
+
+  #precios {
+    padding: 80px 0;
+    background-color: #0c0a1a;
+    text-align: center;
+  }
+
+
+
+  /* 🔹 GRID PRINCIPAL */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* 🔸 TARJETAS */
+  .price-card.is-multi-price {
+    background-color: #1A1238;
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 0 1px rgba(123, 44, 248, 0.2), 0 10px 40px rgba(123, 44, 248, 0.3);
+    border-top: 6px solid transparent;
+    border-image: linear-gradient(90deg, var(--teal), var(--accent), var(--magenta));
+    border-image-slice: 1;
+  }
+
+  .price-card.is-multi-price:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 0 1px rgba(123, 44, 248, 0.3), 0 20px 50px rgba(123, 44, 248, 0.4);
+  }
+
+  /* CABECERA */
+  .price-card__header {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .plan-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-top: 5px;
+  }
+
+  .badge-accent {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--accent), var(--magenta));
+    color: white;
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+
+  /* LISTA DE PRECIOS */
+  .price-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .price-item:last-child {
+    border-bottom: none;
+  }
+
+  .price-item__label {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .price-item__price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .price-item.is-featured .price-item__price {
+    color: var(--teal);
+  }
+
+  .price-item.is-student {
+    background: rgba(121, 224, 255, 0.05);
+    padding: 15px 10px;
+    margin: 0 -10px;
+    border-radius: 4px;
+  }
+
+  .price-item.is-student .price-item__label {
+    color: var(--teal);
+    font-weight: 700;
+  }
+
+  /* BENEFICIOS */
+  .plan-features {
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .plan-features ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .plan-features li {
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .plan-features li .icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--teal);
+    color: #1A1238;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .plan-features li .icon.check::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  /* BOTÓN */
+  .btn.btn-full {
+    display: block;
+    margin-top: 25px;
+    background: var(--bg-3);
+    color: #ffffff;
+    padding: 12px 0;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .btn.btn-full:hover {
+    background: linear-gradient(90deg, var(--accent), var(--magenta));
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .price-item__label {
+      font-size: 16px;
+    }
+
+    .price-item__price {
+      font-size: 20px;
+    }
+  }
