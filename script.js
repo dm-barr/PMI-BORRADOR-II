@@ -1,8 +1,6 @@
-// ===== Utiles
 const $ = s => document.querySelector(s);
 const $$ = s => document.querySelectorAll(s);
 
-// ===== Smooth scroll + menú móvil
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const id = a.getAttribute('href');
@@ -11,7 +9,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (!el) return;
     e.preventDefault();
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    // cerrar menú móvil
     const menu = $('#menu'); const ham = $('#hamburger');
     if (menu?.classList.contains('open')) { menu.classList.remove('open'); menu.style.display=''; ham?.setAttribute('aria-expanded','false'); }
   });
@@ -23,7 +20,6 @@ hamburger?.addEventListener('click', () => {
   hamburger.setAttribute('aria-expanded', String(isOpen));
 });
 
-// ===== Progreso de lectura
 const progressBar = $('#progressBar');
 window.addEventListener('scroll', () => {
   const h = document.documentElement;
@@ -31,7 +27,6 @@ window.addEventListener('scroll', () => {
   progressBar.style.width = (scrolled * 100) + '%';
 });
 
-// ===== Sección activa
 const sections = [...document.querySelectorAll('main section[id], section#inicio')];
 const secObs = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -44,7 +39,6 @@ const secObs = new IntersectionObserver(entries => {
 }, { threshold: 0.55 });
 sections.forEach(s => secObs.observe(s));
 
-// ===== Countdown (al 7 nov 2025 09:00 GMT-5)
 (function countdown(){
   const target = new Date('2025-11-07T09:00:00-05:00').getTime();
   const d=$('#d'), h=$('#h'), m=$('#m'), s=$('#s');
@@ -63,7 +57,6 @@ sections.forEach(s => secObs.observe(s));
   tick(); setInterval(tick, 1000);
 })();
 
-// ===== Count-up KPIs
 const counters = document.querySelectorAll('[data-count]');
 let counted = false;
 const countObs = new IntersectionObserver(entries => {
@@ -86,7 +79,6 @@ const countObs = new IntersectionObserver(entries => {
 },{threshold:.4});
 counters.forEach(c => countObs.observe(c));
 
-// ===== Tabs Agenda
 const tabs = $$('.tab');
 tabs.forEach(tab => tab.addEventListener('click', () => {
   tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
@@ -96,7 +88,6 @@ tabs.forEach(tab => tab.addEventListener('click', () => {
   pane?.classList.add('active');
 }));
 
-// ===== Filtro Agenda + .ics (simple)
 const agendaSearch = $('#agendaSearch');
 const agendaType = $('#agendaType');
 function filterAgenda(){
@@ -114,7 +105,6 @@ function filterAgenda(){
 agendaSearch?.addEventListener('input', filterAgenda);
 agendaType?.addEventListener('change', filterAgenda);
 $('#btnIcs')?.addEventListener('click', e => {
-  // genera un .ics básico con las dos fechas
   const content = [
     'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//PM Tour Norte//ES',
     'BEGIN:VEVENT','DTSTART:20251107T140000Z','DTEND:20251107T230000Z','SUMMARY:PM Tour Norte 2025 - Día 1','END:VEVENT',
@@ -124,9 +114,6 @@ $('#btnIcs')?.addEventListener('click', e => {
   const blob = new Blob([content], {type:'text/calendar'});
   e.target.href = URL.createObjectURL(blob);
 });
-
-// ===== Modal Speakers
-
 
 const modal = document.getElementById('modal'),
       modalBody = document.getElementById('modalBody'),
@@ -155,8 +142,6 @@ document.querySelectorAll('.speaker__btn').forEach(btn => {
 modalClose?.addEventListener('click', () => modal.close());
 modal?.addEventListener('click', e => { if (e.target === modal) modal.close(); });
 
-
-// ===== Toggle moneda + cupón
 const currencyButtons = document.querySelectorAll('.toggle .chip');
 function updatePrices(curr){
   document.querySelectorAll('.price').forEach(card=>{
@@ -174,7 +159,7 @@ currencyButtons.forEach(btn=>{
 });
 updatePrices('PEN');
 
-const coupons = { EARLYPM: 0.15, PMNORTE10: 0.10 }; // simulados
+const coupons = { EARLYPM: 0.15, PMNORTE10: 0.10 };
 $('#applyCoupon')?.addEventListener('click', ()=>{
   const code = ($('#coupon').value || '').trim().toUpperCase();
   const msg = $('#couponMsg');
@@ -189,7 +174,6 @@ $('#applyCoupon')?.addEventListener('click', ()=>{
   msg.textContent = `Descuento aplicado: ${Math.round(off*100)}%`;
 });
 
-// ===== Slider Testimonios (sin libs)
 (function slider(){
   const slider = $('#slider'); if (!slider) return;
   const viewport = slider.querySelector('.slider__viewport');
@@ -201,7 +185,6 @@ $('#applyCoupon')?.addEventListener('click', ()=>{
   window.addEventListener('resize', ()=>go(i));
 })();
 
-// ===== Parallax suave (si no reduce-motion)
 (() => {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const layers = [
@@ -236,7 +219,6 @@ window.addEventListener('scroll', () => {
 });
 back.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-// ===== Newsletter / Registro (validación + honeypot + modal de confirmación)
 function openConfirm(msg){
   const modal = $('#modal'); const body = $('#modalBody');
   body.innerHTML = `<h3 style="margin:0">¡Listo!</h3><p>${msg}</p>`;
@@ -245,7 +227,7 @@ function openConfirm(msg){
 $('#form-news')?.addEventListener('submit', e=>{
   e.preventDefault();
   const form = e.currentTarget;
-  if (form.website?.value) return; // honeypot
+  if (form.website?.value) return; 
   const email = form.newsEmail?.value || '';
   const msg = $('#newsMsg');
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ msg.textContent='Correo no válido'; return; }
@@ -256,7 +238,7 @@ const regForm = $('#form-registro'), regMsg = $('#form-msg');
 regForm?.addEventListener('submit', e=>{
   e.preventDefault();
   const f = new FormData(regForm);
-  if (regForm.empresa?.value) return; // honeypot
+  if (regForm.empresa?.value) return; 
   const req = ['nombre','email','plan','tyc'];
   for (const r of req){
     if (r==='tyc' && !regForm.querySelector('input[name="tyc"]').checked){ regMsg.textContent='Debes aceptar los Términos y Políticas.'; return; }
@@ -267,7 +249,6 @@ regForm?.addEventListener('submit', e=>{
   openConfirm('Tu registro fue enviado. Recibirás confirmación por correo.');
 });
 
-// ===== Cookies
 (function cookies(){
   const box = $('#cookies'); if (!box) return;
   if (localStorage.getItem('cookies-consent')) return;
@@ -275,3 +256,5 @@ regForm?.addEventListener('submit', e=>{
   $('#cookiesAccept').addEventListener('click', ()=>{ localStorage.setItem('cookies-consent','accepted'); box.remove(); });
   $('#cookiesDecline').addEventListener('click', ()=>{ localStorage.setItem('cookies-consent','declined'); box.remove(); });
 })();
+
+  lucide.createIcons();

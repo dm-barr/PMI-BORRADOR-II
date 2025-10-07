@@ -1,4 +1,3 @@
-  /* ===== Paleta / Base (misma paleta formal que veníamos usando) ===== */
   :root {
     --bg-1: #14102A;
     --bg-2: #2B0E4E;
@@ -73,7 +72,6 @@
     z-index: 999
   }
 
-  /* ===== Announcement + Progress ===== */
   .announce {
     background: #0f0d24;
     border-bottom: 1px solid rgba(174, 235, 255, .15)
@@ -106,7 +104,6 @@
     background: linear-gradient(90deg, var(--accent), var(--magenta));
   }
 
-  /* ===== Header / Nav ===== */
   .header {
     position: sticky;
     top: 0;
@@ -202,7 +199,6 @@
     border-radius: 3px
   }
 
-  /* Logo principal */
   .logo {
     height: 8rem;
     width: auto;
@@ -227,17 +223,14 @@
   }
 
 
-  /* ===== Hero con triángulos bien definidos ===== */
   #inicio.hero {
-    background-image: url('img/fondos/portadaTrujillo.png');
+    background-image: url('img/fondos/image.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     position: relative;
     color: white;
   }
-
 
   .hero {
     position: relative;
@@ -312,15 +305,11 @@
 
   .qr img {
     width: 150px;
-    /* Ajusta el tamaño */
     height: auto;
-    /* Mantiene proporción */
     display: block;
     margin: 0 auto;
     border-radius: 0.5rem;
-    /* Opcional: bordes redondeados */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    /* Opcional: sombra */
   }
 
   .qr-box p {
@@ -329,97 +318,6 @@
     opacity: .9
   }
 
-  /* Halos / Triángulos */
-  .decor {
-    position: absolute;
-    border-radius: 999px;
-    filter: blur(70px);
-    opacity: .5;
-    mix-blend-mode: screen
-  }
-
-  .decor--1 {
-    width: 520px;
-    height: 520px;
-    background: radial-gradient(circle, #7B2CF8, #2B0E4E);
-    right: -140px;
-    bottom: -120px
-  }
-
-  .decor--2 {
-    width: 380px;
-    height: 380px;
-    background: radial-gradient(circle, #79E0FF, #2B0E4E);
-    left: -120px;
-    top: -80px
-  }
-
-  .hero::before {
-    content: "";
-    position: absolute;
-    right: -12vw;
-    bottom: -8vh;
-    width: 64vw;
-    height: 64vh;
-    pointer-events: none;
-    background: linear-gradient(135deg, #7B2CF8 0%, #AD2EF5 60%, #79E0FF 100%);
-    clip-path: polygon(18% 0%, 100% 0%, 100% 80%, 60% 62%);
-    opacity: .55;
-    filter: saturate(1.1)
-  }
-
-  .hero::after {
-    content: "";
-    position: absolute;
-    left: -14vw;
-    bottom: -10vh;
-    width: 60vw;
-    height: 56vh;
-    pointer-events: none;
-    background: linear-gradient(135deg, #79E0FF 0%, #AEEBFF 80%);
-    clip-path: polygon(0 60%, 30% 32%, 58% 66%, 0 100%);
-    opacity: .45
-  }
-
-  .hero .shards {
-    position: absolute;
-    inset: 0;
-    pointer-events: none
-  }
-
-  .hero .shards::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    filter: drop-shadow(0 10px 18px rgba(121, 224, 255, .28));
-    border-width: 0 140px 140px 0;
-    border-color: transparent #79E0FF transparent transparent;
-    right: 16vw;
-    top: 14vh;
-    transform: skewX(-6deg) rotate(4deg);
-    opacity: .9
-  }
-
-
-
-  .hero .shards::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    filter: drop-shadow(0 10px 18px rgba(123, 44, 248, .28));
-    border-width: 130px 0 0 170px;
-    border-color: transparent transparent transparent #7B2CF8;
-    right: 4vw;
-    bottom: 12vh;
-    transform: skewX(6deg) rotate(-3deg);
-    opacity: .85
-  }
-
-  /* Countdown */
   .countdown {
     display: flex;
     gap: 12px;
@@ -445,7 +343,7 @@
     opacity: .85
   }
 
-  /* ===== Secciones & utilidades ===== */
+
   .section {
     padding: 70px 0;
     background: linear-gradient(180deg, #0C0A1A, #14102A)
@@ -462,8 +360,18 @@
   .section__title {
     text-align: center;
     margin: 0 0 26px;
-    font-size: 28px;
+    font-size: 35px;
     color: #E9E7FF
+  }
+
+  .section__title__subtitle {
+    text-align: center;
+    margin: 0 0 26px;
+    font-size: 25px;
+    grid-column: 1 / -1;
+    justify-self: center;
+    /* Opcional, si el padre es Flexbox: */
+    width: 100%;
   }
 
   .cards {
@@ -544,7 +452,6 @@
     text-align: center
   }
 
-  /* Why / Stats */
   .why {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -567,7 +474,13 @@
   }
 
   .why__icon {
-    font-size: 60px
+    margin: 15px 0;
+  }
+
+  .why__icon svg {
+    width: 60px;
+    height: 60px;
+    stroke-width: 1.5;
   }
 
   .why__item p {
@@ -599,7 +512,6 @@
     display: inline;
   }
 
-  /* Agenda */
   .filters {
     display: flex;
     gap: 10px;
@@ -678,36 +590,28 @@
     cursor: pointer
   }
 
-  /* ===== Contenedor de speakers ===== */
   #speakers {
     position: relative;
     overflow: hidden;
-    /* evita que los triángulos se salgan */
   }
 
-  /* Contenedor de las tarjetas */
   #speakers .speakers {
     position: relative;
     z-index: 1;
-    /* asegura que las tarjetas estén por encima de los triángulos */
   }
 
-  /* ===== Triángulos decorativos ===== */
   #speakers .decor-triangle {
     position: absolute;
     width: 50vw;
     height: 50vh;
     pointer-events: none;
-    /* no interfieren con clicks */
     opacity: 0.3;
     background: linear-gradient(135deg, #5A1FAE 0%, #2B0E4E 100%);
     clip-path: polygon(18% 0%, 100% 0%, 100% 80%, 60% 62%);
     z-index: 0;
-    /* siempre detrás */
     filter: blur(80px);
   }
 
-  /* Triángulo inferior izquierdo */
   #speakers .triangle-1 {
     bottom: -20%;
     left: -15%;
@@ -717,7 +621,6 @@
     opacity: 0.25;
   }
 
-  /* Triángulo superior derecho */
   #speakers .triangle-2 {
     top: -25%;
     right: -10%;
@@ -727,7 +630,6 @@
     opacity: 0.3;
   }
 
-  /* Triángulo central */
   #speakers .triangle-3 {
     top: 15%;
     left: 20%;
@@ -737,7 +639,6 @@
     opacity: 0.2;
   }
 
-  /* Triángulo superior izquierdo */
   #speakers .triangle-4 {
     top: -10%;
     left: -20%;
@@ -747,7 +648,6 @@
     opacity: 0.2;
   }
 
-  /* Triángulo inferior derecho */
   #speakers .triangle-5 {
     bottom: -15%;
     right: 10%;
@@ -757,11 +657,13 @@
     opacity: 0.15;
   }
 
-  /* Speakers */
   .speakers {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px
+    /* **CLAVE:** Cambiamos a Flexbox para permitir el centrado de filas incompletas */
+    display: flex;
+    flex-wrap: wrap;
+    /* Esta propiedad es la que fuerza el centrado horizontal de los ítems */
+    justify-content: center;
+    gap: 22px;
   }
 
   .speaker {
@@ -771,18 +673,13 @@
     padding: 22px;
     text-align: center;
     box-shadow: var(--shadow);
-
     display: flex;
-    /* Activa flexbox */
     flex-direction: column;
-    /* Elementos en columna */
     justify-content: center;
-    /* Centra verticalmente */
     align-items: center;
-    /* Centra horizontalmente */
-
     min-height: 260px;
-    /* asegura altura mínima, pero sin tocar el ancho */
+    width: 100%;
+    max-width: 380px;
   }
 
   .speaker h6 {
@@ -796,7 +693,6 @@
     display: block
   }
 
-  /* Avatares de ponentes - rectángulo 3:2 con esquinas redondeadas y borde difuminado */
   .speakers .avatar {
     width: 100%;
     max-width: 200px;
@@ -805,22 +701,16 @@
     margin: 0 auto 1rem;
     border-radius: 16px;
     object-fit: cover;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15),
-      0 0 30px rgba(0, 0, 0, 0.05) inset;
-
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 0 30px rgba(0, 0, 0, 0.05) inset;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  /* Hover elegante */
   .speakers .avatar:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2),
       0 0 40px rgba(0, 0, 0, 0.08) inset;
   }
 
-
-
-  /* Precios */
   .pricebar {
     display: flex;
     justify-content: space-between;
@@ -869,7 +759,6 @@
     margin-bottom: 8px
   }
 
-  /* Slider testimonios */
   .slider {
     position: relative
   }
@@ -918,10 +807,9 @@
     right: -8px
   }
 
-  /* Sede / mapa */
   .mapwrap {
     position: relative;
-    padding-bottom: 56%;
+    padding-bottom: 115%;
     height: 0;
     overflow: hidden;
     border-radius: 16px;
@@ -946,7 +834,6 @@
     font-size: 18px;
   }
 
-  /* FAQ / Newsletter / Form */
   .accordion details {
     background: rgba(174, 235, 255, .06);
     border: 1px solid rgba(174, 235, 255, .15);
@@ -1042,7 +929,6 @@
     margin-top: 10px
   }
 
-  /* Patrocinadores por niveles */
   .section-sponsors {
     background: linear-gradient(180deg, #1A1238, #2B0E4E)
   }
@@ -1059,9 +945,7 @@
   .sponsor__name,
   .sponsor__tier {
     text-align: center;
-    /* centra el texto */
     margin: 2px 0;
-    /* unifica el margen vertical */
   }
 
   .sponsor__name {
@@ -1113,7 +997,6 @@
     filter: none
   }
 
-  /* CTA / Footer / sticky */
   .cta {
     background: radial-gradient(900px 320px at 110% 0%, rgba(121, 224, 255, .18), transparent 60%), linear-gradient(135deg, #0C0A1A, #2B0E4E 60%, #7B2CF8);
     color: #fff;
@@ -1197,7 +1080,6 @@
     visibility: visible
   }
 
-  /* Cookies */
   .cookies {
     position: fixed;
     left: 0;
@@ -1256,7 +1138,6 @@
     cursor: pointer
   }
 
-  /* ===== Animaciones visibles pero suaves ===== */
   @keyframes floatY {
     0% {
       transform: translateY(0)
@@ -1338,7 +1219,6 @@
     }
   }
 
-  /* ===== Responsive ===== */
   @media (max-width: 1100px) {
     .agenda li {
       grid-template-columns: 80px 1fr
@@ -1420,11 +1300,11 @@
       font-size: 15px;
     }
 
-      .hero h1 {
-    font-size: 40px;
-    line-height: 1.05;
-    margin: 0
-  }
+    .hero h1 {
+      font-size: 40px;
+      line-height: 1.05;
+      margin: 0
+    }
 
     .qr {
       width: 130px;
@@ -1440,9 +1320,6 @@
     }
   }
 
-
-
-  /* ===== Sección Ejes igual que Why ===== */
   .ejes {
     padding: 70px 0;
     background: linear-gradient(180deg, #0C0A1A, #14102A);
@@ -1465,6 +1342,12 @@
 
   .eje-icon {
     font-size: 60px;
+  }
+
+  .eje-icon svg {
+    width: 60px;
+    height: 60px;
+    stroke-width: 1.6;
   }
 
   .eje-card {
@@ -1501,7 +1384,6 @@
     border-color: var(--accent);
   }
 
-  /* Responsive idéntico al Why */
   @media (max-width: 980px) {
     .ejes-grid {
       grid-template-columns: 1fr 1fr;
@@ -1513,5 +1395,3 @@
       grid-template-columns: 1fr;
     }
   }
-  
-  
