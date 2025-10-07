@@ -258,3 +258,40 @@ regForm?.addEventListener('submit', e=>{
 })();
 
   lucide.createIcons();
+
+
+
+  // Obtener elementos del DOM
+const btnBrochure = $('#btnVerBrochure');
+
+
+// 1. Función para abrir el modal (similar a la que ya tienes)
+function openModalWithPDF(pdfUrl, title = 'Brochure Oficial') {
+  // Contenido HTML del visor de PDF
+  modalBody.innerHTML = `
+    <div class="pdf-viewer-container">
+      <h3>${title}</h3>
+      <iframe 
+        src="${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0"
+        width="100%" 
+        height="100%" 
+        style="border: none;"
+        title="${title}"
+      ></iframe>
+      <p class="muted center tiny mt-8">Para descargar, usa el botón de descarga del navegador.</p>
+    </div>
+  `;
+  modal.showModal();
+}
+
+// 2. Lógica para abrir el PDF cuando se hace clic en el botón
+btnBrochure?.addEventListener('click', () => {
+  // Asegúrate de cambiar 'brochure.pdf' por la ruta real de tu archivo
+  openModalWithPDF('brochure.pdf'); 
+});
+
+// 3. Lógica para cerrar el modal (si no está ya implementada globalmente para el botón)
+modalClose?.addEventListener('click', () => {
+  modal.close();
+  modalBody.innerHTML = ''; // Limpiar el contenido al cerrar
+});

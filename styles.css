@@ -1641,3 +1641,47 @@
       font-size: 20px;
     }
   }
+
+
+
+  /* === ESTILOS PARA LA SECCIÓN BROCHURE === */
+
+  .brochure-container {
+    /* Fondo sutil para enmarcar el PDF, usando los colores de acento */
+    background: var(--bg-1);
+    border: 1px solid var(--magenta);
+    border-radius: var(--radius);
+    padding: 10px;
+    /* Una sombra que concuerda con el tema oscuro */
+    box-shadow: 0 0 40px rgba(173, 46, 245, 0.2);
+    overflow: hidden;
+    max-width: 1000px;
+    /* Limita el ancho del visor para mejor lectura */
+    margin: 0 auto;
+  }
+
+  .brochure-container iframe {
+    /* Asegura que el iframe ocupe todo el espacio del contenedor con los 700px de altura */
+    display: block;
+    border-radius: calc(var(--radius) - 5px);
+    /* Borde redondeado dentro del marco */
+  }
+
+  /* Ajustes para dispositivos móviles */
+  @media (max-width: 768px) {
+    .brochure-container {
+      padding: 5px;
+      max-width: 100%;
+      margin-left: -15px;
+      /* Pequeño ajuste para aprovechar mejor el espacio */
+      margin-right: -15px;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+    }
+
+    .brochure-container iframe {
+      /* Reducir altura en móviles para que no ocupe toda la pantalla */
+      height: 500px !important;
+    }
+  }
