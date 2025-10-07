@@ -657,6 +657,83 @@
     opacity: 0.15;
   }
 
+  /* Nuevo contenedor para hacer posible el posicionamiento absoluto */
+  .speaker__btn .avatar-wrap {
+    position: relative;
+    /* CLAVE: Define el contexto para posicionar la bandera */
+    width: 100%;
+    max-width: 200px;
+    /* Usa el max-width del avatar */
+    margin: 0 auto 1rem;
+    /* Restaura el margen original del avatar */
+  }
+
+  /* Asegura que la imagen no tenga el margen inferior que ahora tendrá el contenedor */
+  .speaker__btn .avatar-wrap .avatar {
+    margin-bottom: 0;
+  }
+
+  /* Estilo y posicionamiento de la bandera */
+  /* 🔹 Bandera */
+  .speaker__btn .flag-icon {
+    position: absolute;
+    bottom: -12px;
+    right: -5px;
+    z-index: 2;
+    /* Se mantiene visible sobre la foto */
+
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* Bandera circular */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* 🔸 Sin borde ni sombra para que quede totalmente al ras */
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+
+    /* 🔸 Si quieres eliminar cualquier separación por antialiasing */
+    transform: translate(2px, 2px);
+  }
+
+  /* Ejemplo de carga de banderas: */
+
+  /* Bandera de Perú */
+  .speaker__btn[data-country="pe"] .flag-icon {
+    background-image: url('img/banderas/pe.png');
+  }
+
+  /* Bandera de Ecuador */
+  .speaker__btn[data-country="ec"] .flag-icon {
+    background-image: url('img/banderas/ec.png');
+  }
+
+  /* Bandera de Colombia */
+  .speaker__btn[data-country="co"] .flag-icon {
+    background-image: url('img/banderas/co.png');
+  }
+
+  /* Bandera de Brasil */
+  .speaker__btn[data-country="br"] .flag-icon {
+    background-image: url('img/banderas/br.png');
+  }
+
+  /* Bandera de Argentina */
+  .speaker__btn[data-country="ar"] .flag-icon {
+    background-image: url('img/banderas/arg.png');
+  }
+
+  /* Agrega una regla para cada país que necesites */
+
+
+
+
+
   .speakers {
     /* **CLAVE:** Cambiamos a Flexbox para permitir el centrado de filas incompletas */
     display: flex;
