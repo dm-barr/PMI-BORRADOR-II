@@ -1010,14 +1010,21 @@
     background: linear-gradient(180deg, #1A1238, #2B0E4E)
   }
 
-  .sponsors {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.sponsors {
+    /* CLAVE: Cambiamos a Flexbox para permitir el centrado de filas incompletas */
+    display: flex;
+    /* Permite que los logos se envuelvan a la siguiente fila */
+    flex-wrap: wrap; 
+    /* **CLAVE:** Centra los logos horizontalmente como un grupo */
+    justify-content: center; 
     gap: 18px;
     margin: 10px 0 16px;
-    justify-content: center;
-    justify-items: center;
-  }
+    
+    /* Mantenemos el contenedor principal centrado y con ancho limitado */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
   .sponsor__name,
   .sponsor__tier {
@@ -1061,6 +1068,8 @@
     color: #AEEBFF;
     filter: grayscale(.1);
     transition: .2s;
+    width: 100%;
+    max-width: 380px;
   }
 
   .sponsor img {
