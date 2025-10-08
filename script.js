@@ -384,22 +384,3 @@ modalClose?.addEventListener("click", () => {
   modalBody.innerHTML = ""; // Limpiar el contenido al cerrar
 });
 
-// Detectar si el usuario está en un dispositivo móvil
-const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-const pdfContainer = document.getElementById("pdfContainer");
-
-if (isMobile && pdfContainer) {
-  // Reemplazar el iframe por un botón en móviles
-  pdfContainer.innerHTML = `
-      <div class="mobile-pdf-fallback">
-        <p class="center">
-          📄 No se puede visualizar el brochure directamente en tu dispositivo.<br>
-          <a href="https://drive.google.com/file/d/18nIshhnc9w8Lp74a5a07h7nwOUTtYEgo/view" 
-             target="_blank" 
-             class="btn btn-pill btn-lg mt-16">
-            Ver Brochure en una nueva pestaña
-          </a>
-        </p>
-      </div>
-    `;
-}

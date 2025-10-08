@@ -1676,30 +1676,41 @@
     /* Borde redondeado dentro del marco */
   }
 
-  /* Ajustes para dispositivos móviles */
+  /* === AJUSTES PARA DISPOSITIVOS MÓVILES === */
   @media (max-width: 768px) {
     .brochure-container {
+      display: flex;
+      /* Activa el modelo flexible */
+      justify-content: center;
+      /* Centra el contenido horizontalmente */
+      align-items: center;
+      /* Centra verticalmente si hay espacio adicional */
+      flex-direction: column;
+      /* Asegura que el contenido se apile verticalmente */
+
       padding: 5px;
       max-width: 100%;
-      margin-left: -15px;
-      /* Pequeño ajuste para aprovechar mejor el espacio */
-      margin-right: -15px;
+      margin: 0 auto;
+      /* Centrado horizontal general */
       border-left: none;
       border-right: none;
       border-radius: 0;
+      box-sizing: border-box;
+      /* Asegura que el padding no rompa el ancho */
     }
 
     .brochure-container iframe {
-      /* Reducir altura en móviles para que no ocupe toda la pantalla */
       height: 500px !important;
+      /* Ajuste de altura en móviles */
+      width: 95%;
+      /* Deja un pequeño margen lateral para no tocar los bordes */
+      display: block;
+      /* Asegura que el iframe se comporte como bloque */
+      margin: 0 auto;
+      /* Centrado horizontal adicional por seguridad */
+      border-radius: calc(var(--radius) - 4px);
     }
   }
-
-
-
-
-
-
 
   /* 1. LIMPIEZA INICIAL: Asegura que solo las secciones deseadas tengan fondo */
   section:not(#resumen):not(#faq):not(#speakers):not(.section-sponsors)::before,
