@@ -1010,21 +1010,21 @@
     background: linear-gradient(180deg, #1A1238, #2B0E4E)
   }
 
-.sponsors {
+  .sponsors {
     /* CLAVE: Cambiamos a Flexbox para permitir el centrado de filas incompletas */
     display: flex;
     /* Permite que los logos se envuelvan a la siguiente fila */
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     /* **CLAVE:** Centra los logos horizontalmente como un grupo */
-    justify-content: center; 
+    justify-content: center;
     gap: 18px;
     margin: 10px 0 16px;
-    
+
     /* Mantenemos el contenedor principal centrado y con ancho limitado */
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-}
+  }
 
   .sponsor__name,
   .sponsor__tier {
@@ -1693,4 +1693,223 @@
       /* Reducir altura en móviles para que no ocupe toda la pantalla */
       height: 500px !important;
     }
+  }
+
+
+
+
+
+
+
+  /* 1. LIMPIEZA INICIAL: Asegura que solo las secciones deseadas tengan fondo */
+  section:not(#resumen):not(#faq):not(#speakers):not(.section-sponsors)::before,
+  section:not(#resumen):not(#faq):not(#speakers):not(.section-sponsors)::after {
+    content: none !important;
+    background-image: none !important;
+    animation: none !important;
+    filter: none !important;
+    position: static !important;
+  }
+
+  /* === ESTILOS BASE PARA TODAS LAS SECCIONES CON FONDOS === */
+
+  /* SELECTOR CLAVE: Solo aplica a las secciones deseadas */
+  section#resumen,
+  section#faq,
+  section#speakers,
+  section.section-sponsors {
+    position: relative;
+    overflow: hidden;
+  }
+
+  section#resumen .container,
+  section#faq .container,
+  section#speakers .container,
+  section.section-sponsors .container {
+    position: relative;
+    z-index: 1;
+    /* Asegura que el contenido quede encima de los fondos */
+  }
+
+  /* === ESTILOS BASE PARA TODAS LAS SECCIONES CON FONDOS === */
+
+  /* SELECTOR CLAVE: Solo aplica a las tres secciones deseadas */
+  section#resumen,
+  section#speakers,
+  section.section-sponsors {
+    position: relative;
+    overflow: hidden;
+  }
+
+  section#resumen .container,
+  section#speakers .container,
+  section.section-sponsors .container {
+    position: relative;
+    z-index: 1;
+    /* Asegura que el contenido quede encima de los fondos */
+  }
+
+  /* 2. Definición de la Animación de Flotar (Movimiento Aumentado) */
+  @keyframes subtleFloat {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+      transform: translate(30px, 20px) scale(1.02);
+    }
+
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+
+  /* --------------------------------------------------------------------- */
+  /* --- A. ALTA DENSIDAD (32 ÍCONOS) PARA #speakers Y .section-sponsors (DESORDEN HORIZONTAL) --- */
+  /* --------------------------------------------------------------------- */
+
+  /* ÍCONOS 1 A 4: Usando ::after (8 Íconos simulados en esta capa) */
+  section#speakers::after,
+  section.section-sponsors::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Repetimos los primeros 4 íconos para simular 8 en este bloque (mayor densidad) */
+    background-image:
+      url('img/valores/v1.png'), url('img/valores/v2.png'), url('img/valores/v3.png'), url('img/valores/v4.png'),
+      url('img/valores/v1.png'), url('img/valores/v2.png'), url('img/valores/v3.png'), url('img/valores/v4.png');
+
+    background-size: 80px 80px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+
+    /* 8 Posiciones: Eje X con mayor variación lateral (5%-20% y 80%-95%) */
+    background-position:
+      5% 5%,
+      /* Izquierda (v1) - Top */
+      92% 15%,
+      /* Derecha (v2) */
+      6% 28%,
+      /* Izquierda (v3) */
+      94% 40%,
+      /* Derecha (v4) */
+
+      10% 53%,
+      /* Izquierda (v1 repetido) */
+      94% 65%,
+      /* Derecha (v2 repetido) */
+      5% 78%,
+      /* Izquierda (v3 repetido) */
+      90% 90%;
+    /* Derecha (v4 repetido) - Bottom */
+
+    filter: opacity(0.12);
+    z-index: 0;
+    pointer-events: none;
+    animation: subtleFloat 25s infinite ease-in-out;
+  }
+
+
+  /* ÍCONOS 5 A 8: Usando ::before (8 Íconos simulados en esta capa) */
+  section#speakers::before,
+  section.section-sponsors::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Repetimos los últimos 4 íconos para simular 8 en este bloque (mayor densidad) */
+    background-image:
+      url('img/valores/v5.png'), url('img/valores/v6.png'), url('img/valores/v7.png'), url('img/valores/v8.png'),
+      url('img/valores/v5.png'), url('img/valores/v6.png'), url('img/valores/v7.png'), url('img/valores/v8.png');
+
+    background-size: 80px 80px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+
+    /* 8 Posiciones: Eje X con mayor variación lateral (5%-20% y 80%-95%), Eje Y Fino */
+    background-position:
+      90% 5%,
+      /* Derecha (v5) - Top */
+      12% 15%,
+      /* Izquierda (v6) */
+      92% 28%,
+      /* Derecha (v7) */
+      7% 40%,
+      /* Izquierda (v8) */
+
+      90% 53%,
+      /* Derecha (v5 repetido) */
+      8% 65%,
+      /* Izquierda (v6 repetido) */
+      95% 78%,
+      /* Derecha (v7 repetido) */
+      9% 90%;
+    /* Izquierda (v8 repetido) - Bottom */
+
+    filter: opacity(0.12);
+    z-index: 0;
+    pointer-events: none;
+    animation: subtleFloat 22s infinite ease-in-out;
+  }
+
+  /* --------------------------------------------------------------------- */
+  /* --- B. BAJA DENSIDAD (8 ÍCONOS) PARA #resumen Y #faq --- */
+  /* --------------------------------------------------------------------- */
+
+  /* ÍCONOS 1 A 8: Usando ::after (8 Íconos, NO DUPLICADOS) */
+  section#resumen::after,
+  section#faq::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* CORRECTO: Los 8 íconos originales, NO DUPLICADOS */
+    background-image:
+      url('img/valores/v1.png'), url('img/valores/v2.png'), url('img/valores/v3.png'), url('img/valores/v4.png'),
+      url('img/valores/v5.png'), url('img/valores/v6.png'), url('img/valores/v7.png'), url('img/valores/v8.png');
+
+    background-size: 80px 80px;
+
+    /* 8 Repeticiones (no-repeat) */
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+
+    /* 8 Posiciones: Ahora mejor dispersas cubriendo todo el área */
+    background-position:
+      10% 10%,
+      /* Top-Left */
+      90% 90%,
+      /* Bottom-Right */
+      50% 5%,
+      /* Center-Top */
+      15% 75%,
+      /* Left-Bottom */
+      85% 25%,
+      /* Right-Top */
+      5% 50%,
+      /* Left-Center */
+      50% 95%,
+      /* Center-Bottom */
+      95% 50%;
+    /* Right-Center */
+
+    filter: opacity(0.12);
+    z-index: 0;
+    pointer-events: none;
+    animation: subtleFloat 25s infinite ease-in-out;
+  }
+
+  /* ÍCONOS 9+: Aseguramos que ::before NO MUESTRE NADA para #resumen y #faq */
+  section#resumen::before,
+  section#faq::before {
+    content: none !important;
+    background-image: none !important;
+    animation: none !important;
   }
