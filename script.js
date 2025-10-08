@@ -265,6 +265,8 @@ regForm?.addEventListener('submit', e=>{
 const btnBrochure = $('#btnVerBrochure');
 
 
+
+
 // 1. Función para abrir el modal (similar a la que ya tienes)
 function openModalWithPDF(pdfUrl, title = 'Brochure Oficial') {
   // Contenido HTML del visor de PDF
