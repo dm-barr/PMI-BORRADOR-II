@@ -755,55 +755,26 @@
       </div>
     </section>
 
-<section id="brochure" class="section">
-  <div class="container">
-    <h3 class="section__title">
-      Brochure Oficial PM Tour Norte 2025
-    </h3>
+    <section id="brochure" class="section">
+      <div class="container">
+        <h3 class="section__title">
+          Brochure Oficial PM Tour Norte 2025
+        </h3>
 
-    <div class="brochure-container" id="pdfContainer">
-      <iframe
-        src="https://drive.google.com/file/d/18nIshhnc9w8Lp74a5a07h7nwOUTtYEgo/preview"
-        width="100%"
-        height="800px"
-        style="border:none;"
-        allow="autoplay"
-        title="Brochure Oficial PM Tour Norte 2025">
-      </iframe>
-    </div>
+        <div class="brochure-container" id="pdfContainer">
+          <iframe src="https://drive.google.com/file/d/18nIshhnc9w8Lp74a5a07h7nwOUTtYEgo/preview" width="100%"
+            height="800px" style="border:none;" allow="autoplay" title="Brochure Oficial PM Tour Norte 2025">
+          </iframe>
+        </div>
 
-    <div class="center mt-24">
-      <a class="btn btn-pill btn-lg"
-         href="https://drive.google.com/uc?export=download&id=18nIshhnc9w8Lp74a5a07h7nwOUTtYEgo"
-         download>
-        Descargar Brochure (PDF)
-      </a>
-    </div>
-  </div>
-</section>
-
-<script>
-  // Detectar si el usuario está en un dispositivo móvil
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  const pdfContainer = document.getElementById('pdfContainer');
-
-  if (isMobile && pdfContainer) {
-    // Reemplazar el iframe por un botón en móviles
-    pdfContainer.innerHTML = `
-      <div class="mobile-pdf-fallback">
-        <p class="center">
-          📄 No se puede visualizar el brochure directamente en tu dispositivo.<br>
-          <a href="https://drive.google.com/file/d/18nIshhnc9w8Lp74a5a07h7nwOUTtYEgo/view" 
-             target="_blank" 
-             class="btn btn-pill btn-lg mt-16">
-            Ver Brochure en una nueva pestaña
+        <div class="center mt-24">
+          <a class="btn btn-pill btn-lg"
+            href="https://drive.google.com/uc?export=download&id=18nIshhnc9w8Lp74a5a07h7nwOUTtYEgo" download>
+            Descargar Brochure (PDF)
           </a>
-        </p>
+        </div>
       </div>
-    `;
-  }
-</script>
-
+    </section>
 
     <!-- FAQ -->
     <section id="faq" class="section section-gradient" aria-labelledby="faq-titulo">
