@@ -384,3 +384,53 @@ modalClose?.addEventListener("click", () => {
   modalBody.innerHTML = ""; // Limpiar el contenido al cerrar
 });
 
+// ... [Código JS existente, incluyendo la definición de modal y modalBody] ...
+
+// ===================================
+// LÓGICA DEL MODAL PARA SPONSORS (DISEÑO IDÉNTICO AL SPEAKER)
+// ===================================
+
+/**
+ * Abre el modal con la información del patrocinador usando el diseño del speaker.
+ * @param {string} name - Nombre de la organización.
+ * @param {string} type - Tipo de patrocinador.
+ * @param {string} bio - Descripción de la organización.
+ * @param {string} website - URL del sitio web.
+ * @param {string} imgSrc - URL de la imagen del logo.
+ */
+const openSponsorModal = (name, type, bio, website, imgSrc) => {
+  const websiteHtml = website
+    ? `<p class="mt-20"><a href="${website}" target="_blank" class="btn btn-primary">Visitar sitio web</a></p>`
+    : "";
+
+  // Estructura que replica el modal del speaker: Imagen + Info en columna
+  modalBody.innerHTML = `
+    <div class="speaker__modal__content">
+      
+      <div class="speaker__modal__text">
+        <h4 class="speaker__modal__name">${name}</h4>
+        <p class="speaker__modal__title muted">${type}</p>
+        
+        <p class="mt-20">${bio.split('\n').join('<br><br>')}</p>
+
+        ${websiteHtml}
+      </div>
+    </div>
+  `;
+  modal.showModal();
+};
+
+// Listener para todos los botones de Patrocinadores
+$$(".sponsor__btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Extrae todos los datos de los atributos
+    const name = btn.dataset.name;
+    const type = btn.dataset.type;
+    const bio = btn.dataset.bio;
+    const website = btn.dataset.website;
+    const imgSrc = btn.dataset.img; 
+    
+    // Llama a la función para abrir el modal
+    openSponsorModal(name, type, bio, website, imgSrc);
+  });
+});

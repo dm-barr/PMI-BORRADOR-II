@@ -1924,3 +1924,128 @@
     background-image: none !important;
     animation: none !important;
   }
+
+
+  /* =============================== */
+/* SPONSORS STYLES (CON TEXTO) */
+/* =============================== */
+
+/* Tarjeta individual del Sponsor (Ajustada para que el texto quede abajo) */
+.sponsor {
+    /* Mantiene los estilos de tarjeta */
+    background: linear-gradient(180deg, rgba(90, 31, 174, .18), rgba(12, 10, 26, .55));
+    border: 1px solid rgba(174, 235, 255, .12);
+    border-radius: 18px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column; /* Coloca los elementos verticalmente */
+    justify-content: flex-start; /* Alinea el contenido al inicio (arriba) */
+    align-items: center;
+    min-height: 200px; /* Incrementamos la altura para acomodar el texto */
+    width: 100%;
+}
+
+/* Botón que envuelve SOLO el logo (para hacerlo clicable y agregar efectos) */
+.sponsor__btn {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Limita la altura para el área clicable del logo */
+    min-height: 80px; 
+    transition: transform 0.2s;
+    margin-bottom: 10px; /* Espacio entre el logo y el texto */
+}
+
+/* Efecto hover/focus solo en el botón (logo) */
+.sponsor__btn:hover,
+.sponsor__btn:focus {
+    transform: scale(1.05); /* Zoom sutil en el logo */
+}
+
+/* Estilo del logo del sponsor */
+.sponsor__logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 70px; /* Limita la altura del logo */
+    object-fit: contain;
+}
+
+/* Efecto en el logo al pasar el mouse */
+
+
+/* Estilos para el texto */
+.sponsor__name {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 4px;
+    color: var(--white);
+    margin-top: 1rem;
+}
+
+.sponsor__category {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* ... Mantener el resto de estilos para el modal y las grillas ... */
+
+
+/* =============================== */
+/* AJUSTES PARA LOGO DENTRO DEL MODAL DE SPEAKER */
+/* =============================== */
+
+/* Para el logo del patrocinador dentro del modal. */
+.sponsor-logo-modal-fit {
+    /* El logo debe ajustarse al contenedor sin ser cortado */
+    object-fit: contain; 
+    
+    /* Le damos un tamaño máximo para que no parezca desproporcionado */
+    max-height: 180px; 
+    max-width: 100%;
+    
+    /* Remueve cualquier filtro de opacidad o escala de grises que pudiera tener el botón */
+    filter: none !important; 
+    
+    /* Fondo que ayuda a que resalten los logos blancos o transparentes */
+    background: rgba(0, 0, 0, 0.1); 
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Ajuste opcional para centrar verticalmente el logo dentro del wrapper del speaker */
+.speaker__modal__img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===================================
+   ESCALONADO DE TAMAÑOS - MODAL SPONSORS
+   =================================== */
+
+.speaker__modal__name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.speaker__modal__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.speaker__modal__text p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.speaker__modal__text a,
+.speaker__modal__text .btn {
+  font-size: 14px;
+}
