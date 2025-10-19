@@ -364,6 +364,14 @@
     color: #E9E7FF
   }
 
+  #special {
+    display: block;      /* Asegura que ocupe una línea completa */
+    width: 100%;         /* Ocupa todo el ancho del div padre */
+    text-align: center;  /* Opcional: centra el texto */
+    margin: 0, 15px;           /* Opcional: elimina márgenes si los hay */
+  }
+
+
   .section__title__subtitle {
     text-align: center;
     margin: 0 0 26px;
@@ -2049,3 +2057,5 @@
 .speaker__modal__text .btn {
   font-size: 14px;
 }
+
+
