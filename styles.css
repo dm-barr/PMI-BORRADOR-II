@@ -365,10 +365,10 @@
   }
 
   #special {
-    display: block;      /* Asegura que ocupe una línea completa */
+    display: block;      /* Asegura que ocupe una lÃ­nea completa */
     width: 100%;         /* Ocupa todo el ancho del div padre */
     text-align: center;  /* Opcional: centra el texto */
-    margin: 0, 15px;           /* Opcional: elimina márgenes si los hay */
+    margin: 0, 15px;           /* Opcional: elimina mÃ¡rgenes si los hay */
   }
 
 
@@ -676,13 +676,13 @@
     /* Restaura el margen original del avatar */
   }
 
-  /* Asegura que la imagen no tenga el margen inferior que ahora tendrá el contenedor */
+  /* Asegura que la imagen no tenga el margen inferior que ahora tendrÃ¡ el contenedor */
   .speaker__btn .avatar-wrap .avatar {
     margin-bottom: 0;
   }
 
   /* Estilo y posicionamiento de la bandera */
-  /* 🔹 Bandera */
+  /* ðŸ”¹ Bandera */
   .speaker__btn .flag-icon {
     position: absolute;
     bottom: -12px;
@@ -699,19 +699,19 @@
     background-position: center;
     background-repeat: no-repeat;
 
-    /* 🔸 Sin borde ni sombra para que quede totalmente al ras */
+    /* ðŸ”¸ Sin borde ni sombra para que quede totalmente al ras */
     border: none;
     box-shadow: none;
     margin: 0;
     padding: 0;
 
-    /* 🔸 Si quieres eliminar cualquier separación por antialiasing */
+    /* ðŸ”¸ Si quieres eliminar cualquier separaciÃ³n por antialiasing */
     transform: translate(2px, 2px);
   }
 
   /* Ejemplo de carga de banderas: */
 
-  /* Bandera de Perú */
+  /* Bandera de PerÃº */
   .speaker__btn[data-country="pe"] .flag-icon {
     background-image: url('img/banderas/pe.png');
   }
@@ -736,7 +736,12 @@
     background-image: url('img/banderas/arg.png');
   }
 
-  /* Agrega una regla para cada país que necesites */
+   /* Bandera de Italia */
+  .speaker__btn[data-country="it"] .flag-icon {
+    background-image: url('img/banderas/it.png');
+  }
+
+  /* Agrega una regla para cada paÃ­s que necesites */
 
 
 
@@ -746,7 +751,7 @@
     /* **CLAVE:** Cambiamos a Flexbox para permitir el centrado de filas incompletas */
     display: flex;
     flex-wrap: wrap;
-    /* Esta propiedad es la que fuerza el centrado horizontal de los ítems */
+    /* Esta propiedad es la que fuerza el centrado horizontal de los Ã­tems */
     justify-content: center;
     gap: 22px;
   }
@@ -1079,6 +1084,8 @@
     width: 100%;
     max-width: 380px;
   }
+
+  
 
   .sponsor img {
     max-width: 100%;
@@ -1487,7 +1494,7 @@
 
 
 
-  /* 🔹 GRID PRINCIPAL */
+  /* ðŸ”¹ GRID PRINCIPAL */
   .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1497,7 +1504,7 @@
     margin: 0 auto;
   }
 
-  /* 🔸 TARJETAS */
+  /* ðŸ”¸ TARJETAS */
   .price-card.is-multi-price {
     background-color: #1A1238;
     border-radius: 12px;
@@ -1619,7 +1626,7 @@
   }
 
   .plan-features li .icon.check::after {
-    content: '✓';
+    content: 'âœ“';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1628,7 +1635,7 @@
     font-weight: 800;
   }
 
-  /* BOTÓN */
+  /* BOTÃ“N */
   .btn.btn-full {
     display: block;
     margin-top: 25px;
@@ -1661,7 +1668,7 @@
 
 
 
-  /* === ESTILOS PARA LA SECCIÓN BROCHURE === */
+  /* === ESTILOS PARA LA SECCIÃ“N BROCHURE === */
 
   .brochure-container {
     /* Fondo sutil para enmarcar el PDF, usando los colores de acento */
@@ -1684,7 +1691,7 @@
     /* Borde redondeado dentro del marco */
   }
 
-  /* === AJUSTES PARA DISPOSITIVOS MÓVILES === */
+  /* === AJUSTES PARA DISPOSITIVOS MÃ“VILES === */
   @media (max-width: 768px) {
     .brochure-container {
       display: flex;
@@ -1709,9 +1716,9 @@
 
     .brochure-container iframe {
       height: 500px !important;
-      /* Ajuste de altura en móviles */
+      /* Ajuste de altura en mÃ³viles */
       width: 95%;
-      /* Deja un pequeño margen lateral para no tocar los bordes */
+      /* Deja un pequeÃ±o margen lateral para no tocar los bordes */
       display: block;
       /* Asegura que el iframe se comporte como bloque */
       margin: 0 auto;
@@ -1768,7 +1775,7 @@
     /* Asegura que el contenido quede encima de los fondos */
   }
 
-  /* 2. Definición de la Animación de Flotar (Movimiento Aumentado) */
+  /* 2. DefiniciÃ³n de la AnimaciÃ³n de Flotar (Movimiento Aumentado) */
   @keyframes subtleFloat {
     0% {
       transform: translate(0, 0) scale(1);
@@ -1784,10 +1791,10 @@
   }
 
   /* --------------------------------------------------------------------- */
-  /* --- A. ALTA DENSIDAD (32 ÍCONOS) PARA #speakers Y .section-sponsors (DESORDEN HORIZONTAL) --- */
+  /* --- A. ALTA DENSIDAD (32 ÃCONOS) PARA #speakers Y .section-sponsors (DESORDEN HORIZONTAL) --- */
   /* --------------------------------------------------------------------- */
 
-  /* ÍCONOS 1 A 4: Usando ::after (8 Íconos simulados en esta capa) */
+  /* ÃCONOS 1 A 4: Usando ::after (8 Ãconos simulados en esta capa) */
   section#speakers::after,
   section.section-sponsors::after {
     content: "";
@@ -1797,7 +1804,7 @@
     width: 100%;
     height: 100%;
 
-    /* Repetimos los primeros 4 íconos para simular 8 en este bloque (mayor densidad) */
+    /* Repetimos los primeros 4 Ã­conos para simular 8 en este bloque (mayor densidad) */
     background-image:
       url('img/valores/v1.png'), url('img/valores/v2.png'), url('img/valores/v3.png'), url('img/valores/v4.png'),
       url('img/valores/v1.png'), url('img/valores/v2.png'), url('img/valores/v3.png'), url('img/valores/v4.png');
@@ -1805,7 +1812,7 @@
     background-size: 80px 80px;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
 
-    /* 8 Posiciones: Eje X con mayor variación lateral (5%-20% y 80%-95%) */
+    /* 8 Posiciones: Eje X con mayor variaciÃ³n lateral (5%-20% y 80%-95%) */
     background-position:
       5% 5%,
       /* Izquierda (v1) - Top */
@@ -1832,7 +1839,7 @@
   }
 
 
-  /* ÍCONOS 5 A 8: Usando ::before (8 Íconos simulados en esta capa) */
+  /* ÃCONOS 5 A 8: Usando ::before (8 Ãconos simulados en esta capa) */
   section#speakers::before,
   section.section-sponsors::before {
     content: "";
@@ -1842,7 +1849,7 @@
     width: 100%;
     height: 100%;
 
-    /* Repetimos los últimos 4 íconos para simular 8 en este bloque (mayor densidad) */
+    /* Repetimos los Ãºltimos 4 Ã­conos para simular 8 en este bloque (mayor densidad) */
     background-image:
       url('img/valores/v5.png'), url('img/valores/v6.png'), url('img/valores/v7.png'), url('img/valores/v8.png'),
       url('img/valores/v5.png'), url('img/valores/v6.png'), url('img/valores/v7.png'), url('img/valores/v8.png');
@@ -1850,7 +1857,7 @@
     background-size: 80px 80px;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
 
-    /* 8 Posiciones: Eje X con mayor variación lateral (5%-20% y 80%-95%), Eje Y Fino */
+    /* 8 Posiciones: Eje X con mayor variaciÃ³n lateral (5%-20% y 80%-95%), Eje Y Fino */
     background-position:
       90% 5%,
       /* Derecha (v5) - Top */
@@ -1877,10 +1884,10 @@
   }
 
   /* --------------------------------------------------------------------- */
-  /* --- B. BAJA DENSIDAD (8 ÍCONOS) PARA #resumen Y #faq --- */
+  /* --- B. BAJA DENSIDAD (8 ÃCONOS) PARA #resumen Y #faq --- */
   /* --------------------------------------------------------------------- */
 
-  /* ÍCONOS 1 A 8: Usando ::after (8 Íconos, NO DUPLICADOS) */
+  /* ÃCONOS 1 A 8: Usando ::after (8 Ãconos, NO DUPLICADOS) */
   section#resumen::after,
   section#faq::after {
     content: "";
@@ -1890,7 +1897,7 @@
     width: 100%;
     height: 100%;
 
-    /* CORRECTO: Los 8 íconos originales, NO DUPLICADOS */
+    /* CORRECTO: Los 8 Ã­conos originales, NO DUPLICADOS */
     background-image:
       url('img/valores/v1.png'), url('img/valores/v2.png'), url('img/valores/v3.png'), url('img/valores/v4.png'),
       url('img/valores/v5.png'), url('img/valores/v6.png'), url('img/valores/v7.png'), url('img/valores/v8.png');
@@ -1900,7 +1907,7 @@
     /* 8 Repeticiones (no-repeat) */
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
 
-    /* 8 Posiciones: Ahora mejor dispersas cubriendo todo el área */
+    /* 8 Posiciones: Ahora mejor dispersas cubriendo todo el Ã¡rea */
     background-position:
       10% 10%,
       /* Top-Left */
@@ -1925,7 +1932,7 @@
     animation: subtleFloat 25s infinite ease-in-out;
   }
 
-  /* ÍCONOS 9+: Aseguramos que ::before NO MUESTRE NADA para #resumen y #faq */
+  /* ÃCONOS 9+: Aseguramos que ::before NO MUESTRE NADA para #resumen y #faq */
   section#resumen::before,
   section#faq::before {
     content: none !important;
@@ -1955,7 +1962,7 @@
     width: 100%;
 }
 
-/* Botón que envuelve SOLO el logo (para hacerlo clicable y agregar efectos) */
+/* BotÃ³n que envuelve SOLO el logo (para hacerlo clicable y agregar efectos) */
 .sponsor__btn {
     all: unset;
     cursor: pointer;
@@ -1963,13 +1970,13 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* Limita la altura para el área clicable del logo */
+    /* Limita la altura para el Ã¡rea clicable del logo */
     min-height: 80px; 
     transition: transform 0.2s;
     margin-bottom: 10px; /* Espacio entre el logo y el texto */
 }
 
-/* Efecto hover/focus solo en el botón (logo) */
+/* Efecto hover/focus solo en el botÃ³n (logo) */
 .sponsor__btn:hover,
 .sponsor__btn:focus {
     transform: scale(1.05); /* Zoom sutil en el logo */
@@ -2014,11 +2021,11 @@
     /* El logo debe ajustarse al contenedor sin ser cortado */
     object-fit: contain; 
     
-    /* Le damos un tamaño máximo para que no parezca desproporcionado */
+    /* Le damos un tamaÃ±o mÃ¡ximo para que no parezca desproporcionado */
     max-height: 180px; 
     max-width: 100%;
     
-    /* Remueve cualquier filtro de opacidad o escala de grises que pudiera tener el botón */
+    /* Remueve cualquier filtro de opacidad o escala de grises que pudiera tener el botÃ³n */
     filter: none !important; 
     
     /* Fondo que ayuda a que resalten los logos blancos o transparentes */
@@ -2035,7 +2042,7 @@
 }
 
 /* ===================================
-   ESCALONADO DE TAMAÑOS - MODAL SPONSORS
+   ESCALONADO DE TAMAÃ‘OS - MODAL SPONSORS
    =================================== */
 
 .speaker__modal__name {
@@ -2059,3 +2066,139 @@
 }
 
 
+
+/* ========================================
+   CATEGORÍAS DE SPONSORS CON CINTAS DECORATIVAS
+   ======================================== */
+
+.sponsor-tier {
+    margin-bottom: 48px;
+}
+
+.sponsor-tier__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0 32px;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sponsor-tier__line {
+    flex: 1;
+    height: 3px;
+    max-width: 150px;
+    border-radius: 2px;
+}
+
+.sponsor-tier__text {
+    padding: 0 10px;
+}
+
+/* ===== COLORES POR CATEGORÍA ===== */
+
+/* BLACK - Negro con brillo plateado */
+.sponsor-tier__title[data-category="Black"] {
+    color: #c0c0c0;
+}
+
+.sponsor-tier__title[data-category="Black"] .sponsor-tier__line {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.3) 20%, 
+        rgba(255, 255, 255, 1) 50%, 
+        rgba(255, 255, 255, 0.3) 80%, 
+        transparent 100%);
+    box-shadow: 
+        0 0 25px rgba(255, 255, 255, 1),
+        0 0 40px rgba(255, 255, 255, 0.6);
+}
+
+
+/* GOLD - Oro brillante */
+.sponsor-tier__title[data-category="Gold"] {
+    color: #FFD700;
+}
+
+.sponsor-tier__title[data-category="Gold"] .sponsor-tier__line {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        #DAA520 20%, 
+        #FFD700 50%, 
+        #DAA520 80%, 
+        transparent 100%);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+/* BRONZE - Bronce metálico */
+.sponsor-tier__title[data-category="Bronce"] {
+    color: #CD7F32;
+}
+
+.sponsor-tier__title[data-category="Bronce"] .sponsor-tier__line {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        #B87333 20%, 
+        #CD7F32 50%, 
+        #B87333 80%, 
+        transparent 100%);
+    box-shadow: 0 0 15px rgba(205, 127, 50, 0.7);
+}
+
+/* INSTITUCIONAL - Azul corporativo */
+.sponsor-tier__title[data-category="Institucional"] {
+    color: var(--teal);
+}
+
+.sponsor-tier__title[data-category="Institucional"] .sponsor-tier__line {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        #4DB8E8 20%, 
+        var(--teal) 50%, 
+        #4DB8E8 80%, 
+        transparent 100%);
+    box-shadow: 0 0 15px rgba(121, 224, 255, 0.7);
+}
+
+/* ALIADO - Púrpura de marca */
+.sponsor-tier__title[data-category="Aliado"] {
+    color: var(--magenta);
+}
+
+.sponsor-tier__title[data-category="Aliado"] .sponsor-tier__line {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        #9626D9 20%, 
+        var(--magenta) 50%, 
+        #9626D9 80%, 
+        transparent 100%);
+    box-shadow: 0 0 15px rgba(173, 46, 245, 0.7);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sponsor-tier__title {
+        font-size: 22px;
+        gap: 15px;
+    }
+
+    .sponsor-tier__line {
+        max-width: 80px;
+        height: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sponsor-tier__title {
+        font-size: 18px;
+        gap: 10px;
+    }
+
+    .sponsor-tier__line {
+        max-width: 50px;
+    }
+}
