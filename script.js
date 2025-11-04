@@ -434,3 +434,29 @@ $$(".sponsor__btn").forEach((btn) => {
     openSponsorModal(name, type, bio, website, imgSrc);
   });
 });
+
+
+// Modal Programa - Apertura automática
+window.addEventListener('load', () => {
+  const modalPrograma = document.getElementById('modalPrograma');
+  const closeBtn = document.getElementById('modalProgramaClose');
+  
+  if (!modalPrograma || !closeBtn) return;
+  
+  // Abrir modal después de 2 segundos
+  setTimeout(() => {
+    modalPrograma.showModal();
+  }, 2000);
+  
+  // Cerrar con botón X
+  closeBtn.addEventListener('click', () => {
+    modalPrograma.close();
+  });
+  
+  // Cerrar al hacer clic fuera del modal
+  modalPrograma.addEventListener('click', (e) => {
+    if (e.target === modalPrograma) {
+      modalPrograma.close();
+    }
+  });
+});

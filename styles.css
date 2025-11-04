@@ -2202,3 +2202,288 @@
         max-width: 50px;
     }
 }
+
+
+/* ===================================
+   MODAL PROGRAMA - DISEÑO PREMIUM
+   =================================== */
+
+/* Backdrop con efecto blur mejorado */
+#modalPrograma::backdrop {
+  background: rgba(12, 10, 26, 0.92);
+  backdrop-filter: blur(12px) saturate(1.3);
+  animation: fadeInBackdrop 0.4s ease-out;
+}
+
+@keyframes fadeInBackdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animación de entrada del modal */
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Contenedor principal del modal */
+.modal__card--programa {
+  max-width: 950px;
+  width: 92vw;
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 35px;
+  background: linear-gradient(135deg, #1A1238 0%, #2B0E4E 50%, #14102A 100%);
+  border: 2px solid rgba(174, 235, 255, 0.25);
+  border-radius: 24px;
+  box-shadow: 
+    0 30px 80px rgba(123, 44, 248, 0.5),
+    0 0 0 1px rgba(174, 235, 255, 0.15) inset,
+    0 0 120px rgba(173, 46, 245, 0.3);
+  animation: modalSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de brillo sutil en el fondo */
+.modal__card--programa::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(121, 224, 255, 0.08) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Contenido sobre el efecto de fondo */
+.modal__card--programa > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Botón cerrar mejorado */
+#modalProgramaClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #5A1FAE 0%, #7B2CF8 100%);
+  border: 2px solid rgba(174, 235, 255, 0.3);
+  color: #fff;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(123, 44, 248, 0.4);
+  z-index: 10;
+}
+
+#modalProgramaClose:hover {
+  background: linear-gradient(135deg, #7B2CF8 0%, #AD2EF5 100%);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 12px 30px rgba(173, 46, 245, 0.6);
+}
+
+/* Título del modal */
+.modal__card--programa h2 {
+  text-align: center;
+  margin-bottom: 28px;
+  margin-top: 8px;
+  color: #AEEBFF;
+  font-size: 32px;
+  font-weight: 800;
+  text-shadow: 0 0 30px rgba(121, 224, 255, 0.5);
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #79E0FF, #AEEBFF, #79E0FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Galería de imágenes con efecto de tarjetas */
+.programa-gallery {
+  display: grid;
+  gap: 26px;
+  margin: 15px 0;
+  padding: 0 10px;
+}
+
+/* Cada imagen como tarjeta premium */
+.programa-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(174, 235, 255, 0.2) inset;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid rgba(174, 235, 255, 0.15);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de brillo en hover */
+.programa-img::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(121, 224, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.programa-img:hover::before {
+  opacity: 1;
+  left: 100%;
+}
+
+.programa-img:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 
+    0 20px 50px rgba(123, 44, 248, 0.6),
+    0 0 0 2px rgba(174, 235, 255, 0.4) inset,
+    0 0 40px rgba(121, 224, 255, 0.3);
+  border-color: rgba(121, 224, 255, 0.5);
+}
+
+/* Texto inferior del modal */
+.modal__card--programa > p {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
+  padding: 12px;
+  background: rgba(174, 235, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(174, 235, 255, 0.1);
+}
+
+/* Scrollbar personalizada para el modal */
+.modal__card--programa::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal__card--programa::-webkit-scrollbar-track {
+  background: rgba(12, 10, 26, 0.3);
+  border-radius: 10px;
+}
+
+.modal__card--programa::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7B2CF8, #AD2EF5);
+  border-radius: 10px;
+  border: 2px solid rgba(174, 235, 255, 0.2);
+}
+
+.modal__card--programa::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #AD2EF5, #79E0FF);
+}
+
+/* ===================================
+   RESPONSIVE - MÓVILES
+   =================================== */
+
+@media (max-width: 768px) {
+  .modal__card--programa {
+    width: 95vw;
+    padding: 25px 20px;
+    max-height: 95vh;
+  }
+  
+  .modal__card--programa h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  
+  .programa-gallery {
+    gap: 18px;
+    padding: 0 5px;
+  }
+  
+  #modalProgramaClose {
+    width: 38px;
+    height: 38px;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal__card--programa {
+    padding: 20px 15px;
+  }
+  
+  .modal__card--programa h2 {
+    font-size: 22px;
+  }
+  
+  .programa-gallery {
+    gap: 15px;
+  }
+  
+  .programa-img:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+}
+
+.modal__card--programa {
+  max-width: 950px;
+  width: 92vw;
+  max-height: 85vh;
+  overflow-y: scroll; /* Siempre muestra la barra */
+  scrollbar-gutter: stable; /* Reserva espacio para el scrollbar */
+  padding: 35px;
+  background: linear-gradient(135deg, #1A1238 0%, #2B0E4E 50%, #14102A 100%);
+  border: 2px solid rgba(174, 235, 255, 0.25);
+  border-radius: 24px;
+  box-shadow: 
+    0 30px 80px rgba(123, 44, 248, 0.5),
+    0 0 0 1px rgba(174, 235, 255, 0.15) inset,
+    0 0 120px rgba(173, 46, 245, 0.3);
+  animation: modalSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
