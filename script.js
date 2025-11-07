@@ -51,7 +51,7 @@ const secObs = new IntersectionObserver(
 sections.forEach((s) => secObs.observe(s));
 
 (function countdown() {
-  const target = new Date("2025-11-07T09:00:00-05:00").getTime();
+  const target = new Date("2025-11-07T16:00:00-05:00").getTime();
   const d = $("#d"),
     h = $("#h"),
     m = $("#m"),
